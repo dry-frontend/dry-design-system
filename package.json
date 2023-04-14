@@ -1,0 +1,37 @@
+{
+  "name": "@dry/monorepo",
+  "private": true,
+  "description": "Do not repeat yourself",
+  "author": "dev-robot",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf ./node_modules && pnpm -r clean",
+    "fresh": "pnpm clean && pnpm i",
+    "nuke": "rimraf pnpm-lock.yaml && pnpm fresh",
+    "format": "prettier",
+    "format:check": "pnpm format --check --debug-check",
+    "format:fix": "pnpm format --write",
+    "lint": "eslint --ext mjs,js,ts,tsx",
+    "lint:fix": "pnpm lint --fix"
+  },
+  "engines": {
+    "node": ">16.14.2",
+    "pnpm": ">=7.10.0",
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm"
+  },
+  "packageManager": "pnpm@7.10.0",
+  "dependencies": {
+    "@dry/configs-eslint-ts": "workspace:^",
+    "@dry/configs-eslint-ts-react": "workspace:^",
+    "@dry/configs-prettier": "workspace:^",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.35",
+    "@types/react-dom": "^18.0.11",
+    "eslint": "^8.38.0",
+    "prettier": "^2.8.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.0.4"
+  }
+}

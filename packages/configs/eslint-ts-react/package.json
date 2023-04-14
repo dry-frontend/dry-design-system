@@ -1,0 +1,39 @@
+{
+  "name": "@dry/configs-eslint-ts-react",
+  "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "configs",
+    "pnpm",
+    "eslint",
+    "typescript",
+    "react"
+  ],
+  "description": "Shared eslint config for lib (ts + react) packages",
+  "author": "dev-robot",
+  "license": "MIT",
+  "homepage": "https://github.com/muravjev/configs#readme",
+  "bugs": "https://github.com/muravjev/configs/issues",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf ./node_modules"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^27.1.3",
+    "eslint-plugin-log-filenames": "^1.0.6",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  },
+  "devDependencies": {
+    "@dry/configs-eslint-ts": "workspace:^",
+    "@types/eslint": "^8.4.7"
+  },
+  "peerDependencies": {
+    "eslint": "^8.26.0"
+  }
+}

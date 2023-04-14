@@ -1,0 +1,33 @@
+{
+  "name": "@dry/configs-eslint-ts",
+  "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "configs",
+    "pnpm",
+    "eslint"
+  ],
+  "description": "Shared eslint config for monorepo (ts) and lib (ts) packages",
+  "author": "dev-robot",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf ./node_modules"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-log-filenames": "^1.0.6",
+    "eslint-plugin-prettier": "^4.2.1"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-config": "^3.2.0",
+    "@types/eslint": "^8.37.0"
+  },
+  "peerDependencies": {
+    "eslint": "^8.26.0"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "@dry/configs-ts-react",
+  "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "configs",
+    "pnpm",
+    "typescript",
+    "react"
+  ],
+  "description": "Shared typescript config for lib (ts + react) packages",
+  "author": "dev-robot",
+  "license": "MIT",
+  "main": "tsconfig.json",
+  "scripts": {
+    "clean": "rimraf ./node_modules"
+  },
+  "dependencies": {
+    "@dry/configs-ts": "workspace:*"
+  },
+  "peerDependencies": {
+    "@types/node": "^18.11.3",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.9.4"
+  }
+}
