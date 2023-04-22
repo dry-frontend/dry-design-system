@@ -1,17 +1,17 @@
 export const colors = {
-  PRIMARY: ' #2AC1BC',
-  PRIMARY_SOFT: '##04C09E',
+  PRIMARY: '#2AC1BC',
+  PRIMARY_SOFT: '#04C09E',
   GRAY_600: '#D2D2D2',
   GRAY_500: '#E5E5E5',
   GRAY_400: '#94DACD',
   GRAY_300: '#ECEBF1',
-  GRAY_200: '#dddddd',
-  GRAY_100: '#f6f6f6',
-  YELLOW_800: '#cbba64',
-  BLACK_500: '#111',
+  GRAY_200: '#DDDDDD',
+  GRAY_100: '#F6F6F6',
+  YELLOW_800: '#CBBA64',
+  BLACK_500: '#111111',
   BLACK_400: '#525252',
   BLACK_300: '#737373',
-  WHITE: '#fff'
+  WHITE: '#FFFFFF'
 };
 
 export const zIndex = {
