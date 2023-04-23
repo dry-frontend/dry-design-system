@@ -29,7 +29,7 @@ function Button({
       <S.Container>
         {loading && <LoadingSpinner />}
         {!loading && prefixIconURL && <S.PrefixIcon src={prefixIconURL} />}
-        <p style={{ margin: '0' }}>{children}</p>
+        <S.ButtonText>{children}</S.ButtonText>
       </S.Container>
     </S.Button>
   );

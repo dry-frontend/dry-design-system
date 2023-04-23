@@ -120,5 +120,9 @@ export const S = {
     &:active {
       transform: scale(${({ disabled }) => (disabled ? 1 : 0.98)});
     }
+  `,
+
+  ButtonText: styled.p`
+    margin: 0;
   `
 };
