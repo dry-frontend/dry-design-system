@@ -14,7 +14,7 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
 
 function Button({
   variant = 'primary',
-  size = 'small',
+  size = 'medium',
   type = 'button',
   loading = false,
   disabled = false,
