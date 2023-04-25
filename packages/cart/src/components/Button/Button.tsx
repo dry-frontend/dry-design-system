@@ -26,11 +26,9 @@ function Button({
 
   return (
     <S.Button variant={variant} size={size} type={type} disabled={disabled} {...props}>
-      <S.Container>
-        {loading && <LoadingSpinner />}
-        {!loading && prefixIconURL && <S.PrefixIcon src={prefixIconURL} />}
-        <S.ButtonText>{children}</S.ButtonText>
-      </S.Container>
+      {loading && <LoadingSpinner />}
+      {!loading && prefixIconURL && <S.PrefixIcon src={prefixIconURL} />}
+      <S.ButtonText>{children}</S.ButtonText>
     </S.Button>
   );
 }

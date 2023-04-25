@@ -58,13 +58,6 @@ export const ButtonStyles = {
 };
 
 export const S = {
-  Container: styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  `,
-
   PrefixIcon: styled.img`
     width: 25px;
     height: 25px;
@@ -78,6 +71,7 @@ export const S = {
     align-items: center;
     width: fit-content;
     padding: 10px 20px;
+    gap: 10px;
     cursor: pointer;
 
     ${({ variant }) => {
