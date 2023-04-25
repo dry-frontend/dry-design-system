@@ -1,3 +1,5 @@
-export declare type ButtonVariant = 'primary' | 'secondary' | 'plain';
-export declare type ButtonSize = 'large' | 'medium' | 'small' | 'tiny';
+import { ButtonStyles } from './styles';
+
+export declare type ButtonVariant = keyof typeof ButtonStyles.Type;
+export declare type ButtonSize = keyof typeof ButtonStyles.Size;
 export declare type ButtonType = React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
