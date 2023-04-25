@@ -28,7 +28,6 @@ export const ButtonStyles = {
       min-height: 98px;
       font-size: 32px;
       font-weight: 700;
-      line-height: 89%;
     `,
 
     medium: css`
@@ -36,7 +35,6 @@ export const ButtonStyles = {
       min-height: 73px;
       font-size: 24px;
       font-weight: 400;
-      line-height: 89%;
     `,
 
     small: css`
@@ -44,15 +42,12 @@ export const ButtonStyles = {
       min-height: 47px;
       font-size: 20px;
       font-weight: 400;
-      line-height: 100%;
     `,
 
     tiny: css`
       min-width: 117px;
       min-height: 50px;
       font-size: 16px;
-      font-weight: 400;
-      line-height: 89%;
     `
   }
 };
