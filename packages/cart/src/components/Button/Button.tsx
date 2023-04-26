@@ -6,11 +6,11 @@ import React from 'react';
 
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  prefixIconURL?: string;
-  suffix?: string | null;
   size?: ButtonSize;
   variant?: ButtonVariant;
   type?: ButtonType;
+  prefixIconURL?: string;
+  suffix?: string | null;
   loading?: boolean;
   disabled?: boolean;
 }
@@ -36,13 +36,13 @@ function Button({
       disabled={disabled}
       prefixIcon={prefixIconURL ? true : false}
       suffix={suffix ? true : false}
+      loading={loading}
       padding={getButtonPadding({
         variant,
         size,
         hasPrefix: prefixIconURL || loading ? true : false,
         hasSuffix: suffix ? true : false
       })}
-      loading={loading}
       {...props}
     >
       {loading && (

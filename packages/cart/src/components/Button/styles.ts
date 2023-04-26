@@ -1,4 +1,3 @@
-import { Loading } from './Button.stories';
 import { ButtonSize, ButtonVariant } from 'components/Button/types';
 import { motion } from 'framer-motion';
 import styled, { FlattenSimpleInterpolation, css } from 'styled-components';
@@ -23,7 +22,7 @@ export const ButtonStyles = {
     `
   },
 
-  Size: {
+  Font: {
     large: css`
       font-size: 16px;
       font-weight: 600;
@@ -45,7 +44,7 @@ export const ButtonStyles = {
   }
 };
 
-export const ButtonSizes = {
+export const ButtonPadding = {
   primary: {
     large: {
       normal: css`
@@ -184,11 +183,11 @@ export const S = {
   Button: styled.button<{
     size: ButtonSize;
     variant: ButtonVariant;
+    padding: FlattenSimpleInterpolation;
     disabled: boolean;
     prefixIcon: boolean;
     suffix: boolean;
     loading: boolean;
-    padding: FlattenSimpleInterpolation;
   }>`
     all: unset;
     box-sizing: border-box;
@@ -200,7 +199,7 @@ export const S = {
     cursor: pointer;
 
     ${({ variant }) => ButtonStyles.Type[variant]}
-    ${({ size }) => ButtonStyles.Size[size]}
+    ${({ size }) => ButtonStyles.Font[size]}
     ${({ padding }) => padding}
 
     ${({ prefixIcon }) =>
