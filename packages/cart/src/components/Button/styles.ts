@@ -1,106 +1,220 @@
+import { Loading } from './Button.stories';
 import { ButtonSize, ButtonVariant } from 'components/Button/types';
-import styled, { css } from 'styled-components';
+import styled, { FlattenSimpleInterpolation, css } from 'styled-components';
 
 export const ButtonStyles = {
   Type: {
     primary: css`
-      background-color: #2bc1bc;
+      background-color: #317172;
       color: #ffffff;
       border: none;
     `,
 
     secondary: css`
-      background-color: #73675c;
-      color: #ffffff;
-      border: none;
+      background-color: #f5f5f5;
+      color: #576363;
+      border: 1px solid #e4eeee;
     `,
 
     plain: css`
-      background-color: #ffffff;
-      color: #333333;
-      border: 1px solid #bbbbbb;
+      background-color: #f3f3f3;
+      color: #626262;
     `
   },
 
   Size: {
     large: css`
-      min-width: 638px;
-      min-height: 98px;
-      font-size: 32px;
-      font-weight: 700;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 18px;
     `,
 
     medium: css`
-      min-width: 388px;
-      min-height: 73px;
-      font-size: 24px;
+      font-size: 16px;
       font-weight: 400;
+      line-height: 18px;
     `,
 
     small: css`
-      min-width: 138px;
-      min-height: 47px;
-      font-size: 20px;
+      font-size: 14px;
       font-weight: 400;
-    `,
-
-    tiny: css`
-      min-width: 117px;
-      min-height: 50px;
-      font-size: 16px;
+      border-radius: 25px;
+      line-height: 16px;
     `
   }
 };
 
-export const S = {
-  PrefixIcon: styled.img`
-    width: 25px;
-    height: 25px;
-  `,
+export const ButtonSizes = {
+  primary: {
+    large: {
+      normal: css`
+        padding: 16px 18.35px 14px 18px;
+      `,
+      prefix: css`
+        padding: 9px 18.35px 9px 18px;
+      `,
+      suffix: css`
+        padding: 14px 8.35px 12px 9px;
+      `,
+      affix: css`
+        padding: 9px 18.35px 9px 18px;
+      `
+    },
+    medium: {
+      normal: css`
+        padding: 10px 14.72px 10px 15px;
+      `,
+      prefix: css`
+        padding: 7px 14.72px 7px 15px;
+      `,
+      suffix: css`
+        padding: 8px 4.72px 8px 15px;
+      `,
+      affix: css`
+        padding: 7px 14.72px 7px 15px;
+      `
+    },
+    small: {
+      normal: css`
+        padding: 7px 12px 5px 12px;
+      `,
+      prefix: css`
+        padding: 3px 18.35px 3px 10px;
+      `,
+      suffix: css`
+        padding: 3px 3px 3px 12px;
+      `,
+      affix: css`
+        padding: 3px 3px 3px 10px;
+      `
+    }
+  },
+  // border 때문에 padding이 다르다.
+  secondary: {
+    large: {
+      normal: css`
+        padding: 15px 18.35px 13px 18px;
+      `,
+      prefix: css`
+        padding: 8px 18.35px 8px 18px;
+      `,
+      suffix: css`
+        padding: 13px 8.35px 11px 9px;
+      `,
+      affix: css`
+        padding: 8px 18.35px 8px 18px;
+      `
+    },
+    medium: {
+      normal: css`
+        padding: 9px 14.72px 9px 15px;
+      `,
+      prefix: css`
+        padding: 6px 14.72px 6px 15px;
+      `,
+      suffix: css`
+        padding: 7px 4.72px 7px 15px;
+      `,
+      affix: css`
+        padding: 6px 14.72px 6px 15px;
+      `
+    },
+    small: {
+      normal: css`
+        padding: 7px 12px 4px 12px;
+      `,
+      prefix: css`
+        padding: 2px 18.35px 2px 10px;
+      `,
+      suffix: css`
+        padding: 2px 3px 2px 12px;
+      `,
+      affix: css`
+        padding: 2px 3px 2px 10px;
+      `
+    }
+  },
+  plain: {
+    large: {
+      normal: css`
+        padding: 16px 18.35px 14px 18px;
+      `,
+      prefix: css`
+        padding: 9px 18.35px 9px 18px;
+      `,
+      suffix: css`
+        padding: 14px 8.35px 12px 9px;
+      `,
+      affix: css`
+        padding: 9px 18.35px 9px 18px;
+      `
+    },
+    medium: {
+      normal: css`
+        padding: 10px 14.72px 10px 15px;
+      `,
+      prefix: css`
+        padding: 7px 14.72px 7px 15px;
+      `,
+      suffix: css`
+        padding: 8px 4.72px 8px 15px;
+      `,
+      affix: css`
+        padding: 7px 14.72px 7px 15px;
+      `
+    },
+    small: {
+      normal: css`
+        padding: 7px 12px 5px 12px;
+      `,
+      prefix: css`
+        padding: 3px 18.35px 3px 10px;
+      `,
+      suffix: css`
+        padding: 3px 3px 3px 12px;
+      `,
+      affix: css`
+        padding: 3px 3px 3px 10px;
+      `
+    }
+  }
+};
 
-  Button: styled.button<{ size: ButtonSize; variant: ButtonVariant; disabled: boolean }>`
+export const S = {
+  Button: styled.button<{
+    size: ButtonSize;
+    variant: ButtonVariant;
+    disabled: boolean;
+    prefixIcon: boolean;
+    suffix: boolean;
+    loading: boolean;
+    padding: FlattenSimpleInterpolation;
+  }>`
     all: unset;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: fit-content;
     padding: 10px 20px;
     gap: 10px;
     cursor: pointer;
 
-    ${({ variant }) => {
-      switch (variant) {
-        case 'primary':
-          return ButtonStyles.Type.primary;
-        case 'secondary':
-          return ButtonStyles.Type.secondary;
-        case 'plain':
-          return ButtonStyles.Type.plain;
-      }
-    }}
+    ${({ variant }) => ButtonStyles.Type[variant]}
+    ${({ size }) => ButtonStyles.Size[size]}
+    ${({ padding }) => padding}
 
-    ${({ size }) => {
-      switch (size) {
-        case 'tiny':
-          return ButtonStyles.Size.tiny;
-        case 'small':
-          return ButtonStyles.Size.small;
-        case 'medium':
-          return ButtonStyles.Size.medium;
-        case 'large':
-          return ButtonStyles.Size.large;
-      }
-    }}
+    ${({ prefixIcon }) =>
+      prefixIcon &&
+      css`
+        justify-content: space-between;
+      `}
 
-    ${({ disabled }) => {
-      if (disabled) {
-        return css`
-          cursor: not-allowed;
-          opacity: 0.6;
-        `;
-      }
-    }}
+    ${({ disabled }) =>
+      disabled &&
+      css`
+        cursor: not-allowed;
+        opacity: 0.6;
+      `}
 
     &:hover {
       opacity: ${({ disabled }) => (disabled ? 0.6 : 0.6)};
@@ -111,7 +225,88 @@ export const S = {
     }
   `,
 
+  PrefixIcon: styled.img`
+    width: 15px;
+    height: 15px;
+  `,
+
+  LoadingWrapper: styled.div<{ variant: ButtonVariant; size: ButtonSize }>`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0);
+
+    ${({ size }) =>
+      (size === 'small' &&
+        css`
+          width: 22px;
+          height: 22px;
+        `) ||
+      (size === 'medium' &&
+        css`
+          width: 24px;
+          height: 24px;
+        `)}
+  `,
+
+  PrefixIconWrapper: styled.div<{ variant: ButtonVariant; size: ButtonSize }>`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0);
+
+    ${({ variant }) => variant === 'primary' && 'background-color: #ffffff;'}
+
+    ${({ size }) =>
+      (size === 'small' &&
+        css`
+          width: 22px;
+          height: 22px;
+        `) ||
+      (size === 'medium' &&
+        css`
+          width: 24px;
+          height: 24px;
+        `)}
+  `,
+
+  ButtonTextWrapper: styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  `,
+
   ButtonText: styled.p`
     margin: 0;
+  `,
+
+  SuffixWrapper: styled.div<{ size: string; variant: string }>`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 30px;
+    height: 22px;
+    border-radius: 21px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14.52px;
+
+    ${({ variant }) =>
+      variant === 'primary'
+        ? css`
+            background-color: #ffffff;
+            color: #317172;
+          `
+        : css`
+            background: #317172;
+            color: #ffffff;
+          `}
   `
 };
