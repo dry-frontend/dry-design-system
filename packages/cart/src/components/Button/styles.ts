@@ -290,7 +290,8 @@ export const S = {
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 30px;
+    min-width: 30px;
+    width: fit-content;
     height: 22px;
     border-radius: 21px;
     font-weight: 600;

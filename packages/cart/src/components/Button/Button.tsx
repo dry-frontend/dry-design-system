@@ -49,8 +49,8 @@ function Button({
         <S.LoadingWrapper
           variant={variant}
           size={size}
-          initial={{ width: 0, opacity: 0 }}
-          animate={{ width: '22px', opacity: 1 }}
+          initial={{ x: 10, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
         >
           <LoadingSpinner />
         </S.LoadingWrapper>
@@ -67,8 +67,8 @@ function Button({
           <S.SuffixWrapper
             size={size}
             variant={variant}
-            initial={{ width: 0, opacity: 0 }}
-            animate={{ width: '30px', opacity: 1 }}
+            initial={{ x: -10, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
           >
             {suffix}
           </S.SuffixWrapper>
