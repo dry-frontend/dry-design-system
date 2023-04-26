@@ -10,7 +10,7 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   type?: ButtonType;
   prefixIconURL?: string;
-  suffix?: string | null;
+  suffix?: string | number | null;
   loading?: boolean;
   disabled?: boolean;
 }
