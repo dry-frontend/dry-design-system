@@ -20,9 +20,6 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         <button onClick={() => setCount(count => count + 1)}>count is {count}</button>
-        <Button variant="primary" size="small" suffix={count > 0 ? String(count) : null}>
-          장바구니
-        </Button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
