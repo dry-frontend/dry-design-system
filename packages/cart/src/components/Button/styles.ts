@@ -1,5 +1,6 @@
 import { Loading } from './Button.stories';
 import { ButtonSize, ButtonVariant } from 'components/Button/types';
+import { motion } from 'framer-motion';
 import styled, { FlattenSimpleInterpolation, css } from 'styled-components';
 
 export const ButtonStyles = {
@@ -82,14 +83,13 @@ export const ButtonSizes = {
         padding: 3px 18.35px 3px 10px;
       `,
       suffix: css`
-        padding: 3px 3px 3px 12px;
+        padding: 3px 3px 3px 44px;
       `,
       affix: css`
         padding: 3px 3px 3px 10px;
       `
     }
   },
-  // border 때문에 padding이 다르다.
   secondary: {
     large: {
       normal: css`
@@ -127,7 +127,7 @@ export const ButtonSizes = {
         padding: 2px 18.35px 2px 10px;
       `,
       suffix: css`
-        padding: 2px 3px 2px 12px;
+        padding: 2px 3px 2px 44px;
       `,
       affix: css`
         padding: 2px 3px 2px 10px;
@@ -171,7 +171,7 @@ export const ButtonSizes = {
         padding: 3px 18.35px 3px 10px;
       `,
       suffix: css`
-        padding: 3px 3px 3px 12px;
+        padding: 3px 3px 3px 44px;
       `,
       affix: css`
         padding: 3px 3px 3px 10px;
@@ -230,7 +230,7 @@ export const S = {
     height: 15px;
   `,
 
-  LoadingWrapper: styled.div<{ variant: ButtonVariant; size: ButtonSize }>`
+  LoadingWrapper: styled(motion.div)<{ variant: ButtonVariant; size: ButtonSize }>`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -286,7 +286,7 @@ export const S = {
     margin: 0;
   `,
 
-  SuffixWrapper: styled.div<{ size: string; variant: string }>`
+  SuffixWrapper: styled(motion.div)<{ size: ButtonSize; variant: ButtonVariant }>`
     display: flex;
     justify-content: center;
     align-items: center;

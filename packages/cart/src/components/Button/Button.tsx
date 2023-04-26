@@ -7,7 +7,7 @@ import React from 'react';
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   prefixIconURL?: string;
-  suffix?: string;
+  suffix?: string | null;
   size?: ButtonSize;
   variant?: ButtonVariant;
   type?: ButtonType;
@@ -46,7 +46,12 @@ function Button({
       {...props}
     >
       {loading && (
-        <S.LoadingWrapper variant={variant} size={size}>
+        <S.LoadingWrapper
+          variant={variant}
+          size={size}
+          initial={{ width: 0, opacity: 0 }}
+          animate={{ width: '22px', opacity: 1 }}
+        >
           <LoadingSpinner />
         </S.LoadingWrapper>
       )}
@@ -59,7 +64,12 @@ function Button({
       <S.ButtonTextWrapper>
         <S.ButtonText>{children}</S.ButtonText>
         {suffix && (
-          <S.SuffixWrapper size={size} variant={variant}>
+          <S.SuffixWrapper
+            size={size}
+            variant={variant}
+            initial={{ width: 0, opacity: 0 }}
+            animate={{ width: '30px', opacity: 1 }}
+          >
             {suffix}
           </S.SuffixWrapper>
         )}
