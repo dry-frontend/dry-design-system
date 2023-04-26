@@ -82,7 +82,7 @@ export const ButtonPadding = {
         padding: 3px 18.35px 3px 10px;
       `,
       suffix: css`
-        padding: 3px 3px 3px 44px;
+        padding: 3px 3px 3px 34px;
       `,
       affix: css`
         padding: 3px 3px 3px 10px;
@@ -126,7 +126,7 @@ export const ButtonPadding = {
         padding: 2px 18.35px 2px 10px;
       `,
       suffix: css`
-        padding: 2px 3px 2px 44px;
+        padding: 2px 3px 2px 34px;
       `,
       affix: css`
         padding: 2px 3px 2px 10px;
@@ -170,7 +170,7 @@ export const ButtonPadding = {
         padding: 3px 18.35px 3px 10px;
       `,
       suffix: css`
-        padding: 3px 3px 3px 44px;
+        padding: 3px 3px 3px 34px;
       `,
       affix: css`
         padding: 3px 3px 3px 10px;
