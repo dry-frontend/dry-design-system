@@ -42,7 +42,7 @@ const Text = styled.p<TextProps>`
   &&& {
     word-break: break-word;
 
-    font-size: ${({ size }) => size || 'initial'};
+    font-size: ${({ size }) => `${size}px` || 'initial'};
     font-weight: ${({ weight }) => weight || 'initial'};
   }
 `;
