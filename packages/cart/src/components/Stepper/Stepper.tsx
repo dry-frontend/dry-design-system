@@ -33,13 +33,13 @@ function Stepper(
   }: StepperProps,
   parentRef: React.ForwardedRef<HTMLInputElement | null>
 ) {
+  const isControlComponent = Boolean(value);
+  const textFieldRef = useRef<HTMLInputElement | null>(null);
+
   const [previousAction, setPreviousAction] = useState<{
     action: Actions;
     value: number;
   }>();
-
-  const isControlComponent = Boolean(value);
-  const textFieldRef = useRef<HTMLInputElement | null>(null);
 
   const handleKeyPress: React.KeyboardEventHandler<HTMLInputElement> = event => {
     const { key } = event;
