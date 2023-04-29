@@ -16,10 +16,10 @@ const GAP: Record<Required<FlexBoxProps>['gap'], `${number}px`> = {
 const FlexBox = styled.div<FlexBoxProps>`
   display: flex;
 
-  flex-direction: ${({ direction }) => direction || 'initial'};
+  flex-direction: ${({ direction }) => direction || 'column'};
   justify-content: ${({ justify }) => justify || 'initial'};
   align-items: ${({ align }) => align || 'initial'};
-  gap: ${({ gap }) => GAP[gap || 'small']};
+  gap: ${({ gap }) => (gap ? GAP[gap] : 'initial')};
 `;
 
 export default FlexBox;
