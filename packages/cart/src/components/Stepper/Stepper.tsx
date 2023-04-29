@@ -1,10 +1,12 @@
+import 'styles/globals.css';
+
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import PlainButton from 'components/Button/PlainButton';
 import FlexBox from 'components/FlexBox/FlexBox';
-import React, { forwardRef, useRef } from 'react';
-import styled from 'styled-components';
+import React, { forwardRef, useRef, useState } from 'react';
+
+import * as S from './styles';
 
 export interface StepperProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value'> {
   min?: number;
@@ -16,6 +18,7 @@ export interface StepperProps extends Omit<React.InputHTMLAttributes<HTMLInputEl
   onIncrease?: React.MouseEventHandler<HTMLButtonElement>;
   onDecrease?: React.MouseEventHandler<HTMLButtonElement>;
 }
+export type Actions = 'INCREASE' | 'DECREASE';
 
 function Stepper(
   {
@@ -30,6 +33,11 @@ function Stepper(
   }: StepperProps,
   parentRef: React.ForwardedRef<HTMLInputElement | null>
 ) {
+  const [previousAction, setPreviousAction] = useState<{
+    action: Actions;
+    value: number;
+  }>();
+
   const isControlComponent = Boolean(value);
   const textFieldRef = useRef<HTMLInputElement | null>(null);
 
@@ -45,24 +53,31 @@ function Stepper(
   };
 
   const handleClickToChange =
-    (targetEvent: 'INCREASE' | 'DECREASE'): React.MouseEventHandler<HTMLButtonElement> =>
+    (action: 'INCREASE' | 'DECREASE'): React.MouseEventHandler<HTMLButtonElement> =>
     event => {
       if (!textFieldRef.current) return;
 
       const currentNumber = Number(textFieldRef.current.value);
+      const isInRange: boolean = (() => {
+        if (action === 'INCREASE' && max && currentNumber >= max) return false;
+        if (action === 'DECREASE' && currentNumber <= min) return false;
 
-      if (targetEvent === 'INCREASE' && max && currentNumber >= max) return;
-      if (targetEvent === 'DECREASE' && currentNumber <= min) return;
+        return true;
+      })();
+
+      if (!isInRange) return;
+
+      setPreviousAction({ action, value: currentNumber });
 
       if (!isControlComponent) {
         textFieldRef.current.value = String(
-          targetEvent === 'INCREASE' ? currentNumber + 1 : currentNumber - 1
+          action === 'INCREASE' ? currentNumber + 1 : currentNumber - 1
         );
 
         return;
       }
 
-      targetEvent === 'INCREASE' ? onIncrease?.(event) : onDecrease?.(event);
+      action === 'INCREASE' ? onIncrease?.(event) : onDecrease?.(event);
     };
 
   const setRefs = (element: HTMLInputElement | null) => {
@@ -75,73 +90,39 @@ function Stepper(
 
   return (
     <FlexBox direction="row">
-      <CurrentNumberTextField
-        ref={setRefs}
-        type="number"
-        min={min}
-        max={max}
-        value={value ? value : undefined}
-        defaultValue={defaultValue}
-        disabled={textFieldDisabled}
-        onKeyPress={handleKeyPress}
-        {...rest}
-      />
+      <S.InputWrappedFlexBox>
+        <S.CurrentNumberTextField
+          ref={setRefs}
+          type="number"
+          min={min}
+          max={max}
+          value={value ? value : undefined}
+          defaultValue={defaultValue}
+          disabled={textFieldDisabled}
+          onKeyPress={handleKeyPress}
+          {...rest}
+        />
+
+        {previousAction && (
+          <S.SpringAnimation
+            status={previousAction.action}
+            count={previousAction.value}
+            onAnimationEnd={() => setPreviousAction(undefined)}
+          />
+        )}
+      </S.InputWrappedFlexBox>
 
       <FlexBox>
-        <ControlButton type="button" onClick={handleClickToChange('INCREASE')}>
+        <S.ControlButton type="button" onClick={handleClickToChange('INCREASE')}>
           <FontAwesomeIcon icon={faCaretUp} />
-        </ControlButton>
+        </S.ControlButton>
 
-        <ControlButton type="button" onClick={handleClickToChange('DECREASE')}>
+        <S.ControlButton type="button" onClick={handleClickToChange('DECREASE')}>
           <FontAwesomeIcon icon={faCaretDown} />
-        </ControlButton>
+        </S.ControlButton>
       </FlexBox>
     </FlexBox>
   );
 }
-
-const CurrentNumberTextField = styled.input`
-  appearance: textfield;
-  width: 100%;
-  background-color: #fff;
-
-  border: 1px solid #ddd;
-  border-right: none;
-
-  text-align: center;
-  font-size: 18px;
-
-  &:focus {
-    outline: none;
-  }
-
-  &:disabled {
-    color: #000;
-    background-color: #fff;
-  }
-
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    display: none;
-    appearance: none;
-    margin: 0;
-  }
-`;
-
-const ControlButton = styled(PlainButton)`
-  background-color: #fff;
-
-  padding: 3px 14px;
-  font-size: 14px;
-  border: 1px solid #ddd;
-
-  &:last-child {
-    border-top: none;
-  }
-
-  &:active {
-    background-color: #f3f3f3;
-  }
-`;
 
 export default forwardRef(Stepper);
