@@ -60,6 +60,10 @@ export const 비제어_컴포넌트_예시: Story = {
         <button type="submit" style={{ width: '100%' }}>
           전송
         </button>
+
+        <button type="submit" style={{ width: '100%' }} onClick={() => console.log(ref.current)}>
+          ref 연결 console log 확인
+        </button>
       </form>
     );
   }
