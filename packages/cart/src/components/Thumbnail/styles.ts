@@ -40,6 +40,7 @@ export const S = {
     size: ThumbnailSize;
     objectFit: ThumbnailObjectFit;
     isTransparent: boolean;
+    isCursorPointer: boolean;
   }>`
     border: 1px solid #f5f5f5;
     ${({ isTransparent }) =>
@@ -47,6 +48,11 @@ export const S = {
       css`
         opacity: 0.5;
       `};
+    ${({ isCursorPointer }) =>
+      isCursorPointer &&
+      css`
+        cursor: pointer;
+      `}
     ${({ size }) => ThumbnailStyles.Size[size]};
     ${({ objectFit }) => ThumbnailStyles.ObjectFit[objectFit]};
   `

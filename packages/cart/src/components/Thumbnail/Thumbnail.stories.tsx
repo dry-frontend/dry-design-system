@@ -74,3 +74,17 @@ export const Transparent: Story = {
     </div>
   )
 };
+
+export const CursorPointer: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+      <Thumbnail
+        src={SampleImage}
+        size="medium"
+        objectFit="fill"
+        isTransparent={false}
+        isCursorPointer={true}
+      />
+    </div>
+  )
+};
