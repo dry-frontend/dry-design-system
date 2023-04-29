@@ -10,6 +10,12 @@ const meta: Meta<typeof Stepper> = {
 export default meta;
 type Story = StoryObj<typeof Stepper>;
 
+export const ControlPanel: Story = {
+  render: args => {
+    return <Stepper {...args} />;
+  }
+};
+
 export const 제어_컴포넌트_예시: Story = {
   render: () => {
     const [value, setValue] = useState(5);
