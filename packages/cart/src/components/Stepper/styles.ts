@@ -54,8 +54,12 @@ export const ControlButton = styled(PlainButton)`
     border-top: none;
   }
 
-  &:active {
+  &:active:not(:disabled) {
     background-color: #f3f3f3;
+  }
+
+  &:disabled {
+    color: #ccc;
   }
 `;
 

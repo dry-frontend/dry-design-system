@@ -22,7 +22,7 @@ export type Actions = 'INCREASE' | 'DECREASE';
 
 function Stepper(
   {
-    min = 0,
+    min,
     max,
     textFieldDisabled,
     defaultValue = 1,
@@ -60,7 +60,7 @@ function Stepper(
       const currentNumber = Number(textFieldRef.current.value);
       const isInRange: boolean = (() => {
         if (action === 'INCREASE' && max && currentNumber >= max) return false;
-        if (action === 'DECREASE' && currentNumber <= min) return false;
+        if (action === 'DECREASE' && min && currentNumber <= min) return false;
 
         return true;
       })();
@@ -88,6 +88,24 @@ function Stepper(
     }
   };
 
+  const isIncreaseDisabled: boolean = (() => {
+    if (!max) return false;
+
+    if (!textFieldRef.current && Number(defaultValue) >= max) return true;
+    if (textFieldRef.current?.value && Number(textFieldRef.current.value) >= max) return true;
+
+    return false;
+  })();
+
+  const isDecreaseDisabled: boolean = (() => {
+    if (!min) return false;
+
+    if (!textFieldRef.current && Number(defaultValue) <= min) return true;
+    if (textFieldRef.current?.value && Number(textFieldRef.current.value) <= min) return true;
+
+    return false;
+  })();
+
   return (
     <FlexBox direction="row">
       <S.InputWrappedFlexBox>
@@ -113,11 +131,19 @@ function Stepper(
       </S.InputWrappedFlexBox>
 
       <FlexBox>
-        <S.ControlButton type="button" onClick={handleClickToChange('INCREASE')}>
+        <S.ControlButton
+          type="button"
+          disabled={isIncreaseDisabled}
+          onClick={handleClickToChange('INCREASE')}
+        >
           <FontAwesomeIcon icon={faCaretUp} />
         </S.ControlButton>
 
-        <S.ControlButton type="button" onClick={handleClickToChange('DECREASE')}>
+        <S.ControlButton
+          type="button"
+          disabled={isDecreaseDisabled}
+          onClick={handleClickToChange('DECREASE')}
+        >
           <FontAwesomeIcon icon={faCaretDown} />
         </S.ControlButton>
       </FlexBox>

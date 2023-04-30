@@ -28,6 +28,8 @@ export const 제어_컴포넌트_예시: Story = {
       <div style={{ display: 'flex', gap: '20px', flexDirection: 'column' }}>
         <Stepper
           value={value}
+          max={10}
+          min={5}
           onChange={handleChange}
           onIncrease={() => setValue(value + 1)}
           onDecrease={() => setValue(value - 1)}
