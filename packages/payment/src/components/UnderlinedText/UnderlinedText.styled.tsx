@@ -14,7 +14,7 @@ export const Text = styled.p<UnderlinedTextProps>`
   margin: auto;
 
   font-size: 14px;
-  font-weight: 700;
+  font-weight: ${({ fontWeight }) => fontWeight || 'normal'};
 
   &:before {
     content: '';
