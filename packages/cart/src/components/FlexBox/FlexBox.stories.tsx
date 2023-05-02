@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import FlexBox from './FlexBox';
-import { useRef, useState } from 'react';
 
 const meta: Meta<typeof FlexBox> = {
   title: 'FlexBox',
