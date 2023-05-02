@@ -212,15 +212,15 @@ export const S = {
       disabled &&
       css`
         cursor: not-allowed;
-        opacity: 0.6;
+        opacity: 0.7;
       `}
 
     &:hover {
-      opacity: ${({ disabled }) => (disabled ? 0.6 : 0.6)};
+      opacity: 0.7;
     }
 
     &:active {
-      transform: scale(${({ disabled }) => (disabled ? 1 : 0.98)});
+      transform: scale(${({ disabled }) => (disabled ? 1 : 0.95)});
     }
   `,
 
