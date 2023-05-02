@@ -8,12 +8,10 @@ import React, { forwardRef, useRef, useState } from 'react';
 
 import * as S from './styles';
 
-export interface StepperProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value'> {
+export interface StepperProps extends React.InputHTMLAttributes<HTMLInputElement> {
   min?: number;
   max?: number;
   textFieldDisabled?: boolean;
-
-  value?: React.InputHTMLAttributes<HTMLInputElement>['value'];
 
   onIncrease?: React.MouseEventHandler<HTMLButtonElement>;
   onDecrease?: React.MouseEventHandler<HTMLButtonElement>;
