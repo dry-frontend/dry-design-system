@@ -1,6 +1,6 @@
 import { HTMLAttributes, PropsWithChildren, Ref, forwardRef } from 'react';
 
-import * as S from './FlexBox.styles';
+import * as S from './FlexBox.styled';
 
 interface FlexProps {
   direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
