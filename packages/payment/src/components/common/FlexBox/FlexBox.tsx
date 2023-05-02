@@ -1,20 +1,11 @@
-import { HTMLAttributes, PropsWithChildren, Ref, forwardRef } from 'react';
+import { CSSProperties, HTMLAttributes, PropsWithChildren, Ref, forwardRef } from 'react';
 
 import * as S from './FlexBox.styled';
 
 interface FlexProps {
-  direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
-  justifyContent?:
-    | 'center'
-    | 'start'
-    | 'end'
-    | 'flex-start'
-    | 'flex-end'
-    | 'space-between'
-    | 'space-around'
-    | 'left'
-    | 'right';
-  alignItems?: 'center' | 'start' | 'end' | 'flex-start' | 'flex-end';
+  direction?: CSSProperties['flexDirection'];
+  justifyContent?: CSSProperties['justifyContent'];
+  alignItems?: CSSProperties['alignItems'];
   gap?: string;
   width?: string;
   height?: string;
