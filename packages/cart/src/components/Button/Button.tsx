@@ -2,9 +2,10 @@ import { getButtonPadding } from 'components/Button/getButtonSize';
 import { S } from 'components/Button/styles';
 import { ButtonSize, ButtonType, ButtonVariant } from 'components/Button/types';
 import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner';
+import { motion } from 'framer-motion';
 import React from 'react';
 
-interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.ComponentPropsWithRef<typeof motion.button> {
   children: React.ReactNode;
   size?: ButtonSize;
   variant?: ButtonVariant;
@@ -43,6 +44,8 @@ function Button({
         hasPrefix: prefixIconURL || loading ? true : false,
         hasSuffix: suffix ? true : false
       })}
+      whileHover={{ opacity: 0.7 }}
+      whileTap={disabled ? { scale: 1 } : { scale: 0.95 }}
       {...props}
     >
       {loading && (

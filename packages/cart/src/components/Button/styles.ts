@@ -180,7 +180,7 @@ export const ButtonPadding = {
 };
 
 export const S = {
-  Button: styled.button<{
+  Button: styled(motion.button)<{
     size: ButtonSize;
     variant: ButtonVariant;
     padding: FlattenSimpleInterpolation;
@@ -214,14 +214,6 @@ export const S = {
         cursor: not-allowed;
         opacity: 0.7;
       `}
-
-    &:hover {
-      opacity: 0.7;
-    }
-
-    &:active {
-      transform: scale(${({ disabled }) => (disabled ? 1 : 0.95)});
-    }
   `,
 
   PrefixIcon: styled.img`
