@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { useState } from 'react';
 import Checkbox from './Checkbox';
 
 const meta: Meta<typeof Checkbox> = {
@@ -6,21 +7,28 @@ const meta: Meta<typeof Checkbox> = {
   component: Checkbox
 };
 
-export default meta;
 type Story = StoryObj<typeof Checkbox>;
 
 export const Default: Story = {
   render: () => <Checkbox />
 };
 
-export const isChecked: Story = {
-  render: () => <Checkbox isChecked />
+export const DefaultChecked: Story = {
+  render: () => <Checkbox defaultChecked />
 };
 
-export const WithChildren: Story = {
+export const Controlled: Story = {
+  render: () => {
+    const [checked, setChecked] = useState(false);
+
+    return <Checkbox checked={checked} onChange={() => setChecked(!checked)} />;
+  }
+};
+
+export const WithText: Story = {
   render: () => (
     <Checkbox>
-      <span>이것은 체크박스입니다</span>
+      <span>전체 선택</span>
     </Checkbox>
   )
 };
