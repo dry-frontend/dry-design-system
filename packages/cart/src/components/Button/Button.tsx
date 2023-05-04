@@ -11,7 +11,7 @@ interface ButtonProps extends React.ComponentPropsWithRef<typeof motion.button> 
   variant?: ButtonVariant;
   type?: ButtonType;
   prefixIconURL?: string;
-  suffix?: string | number | null;
+  suffix?: number | null;
   loading?: boolean;
   disabled?: boolean;
 }
