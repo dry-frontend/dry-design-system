@@ -27,22 +27,23 @@ function Button({
   suffix,
   ...props
 }: ButtonProps) {
-  if (loading) disabled = true;
+  const hasPrefix = prefixIconURL || loading ? true : false;
+  const hasSuffix = suffix ? true : false;
 
   return (
     <S.Button
       variant={variant}
       size={size}
       type={type}
-      disabled={disabled}
-      prefixIcon={prefixIconURL ? true : false}
-      suffix={suffix ? true : false}
+      disabled={disabled || loading}
+      prefixIcon={hasPrefix}
+      suffix={hasSuffix}
       loading={loading}
       padding={getButtonPadding({
         variant,
         size,
-        hasPrefix: prefixIconURL || loading ? true : false,
-        hasSuffix: suffix ? true : false
+        hasPrefix,
+        hasSuffix
       })}
       whileHover={{ opacity: 0.7 }}
       whileTap={disabled ? { scale: 1 } : { scale: 0.95 }}
