@@ -51,7 +51,7 @@ function Stepper(
   };
 
   const handleUpdateNumber =
-    (action: 'INCREASE' | 'DECREASE'): React.MouseEventHandler<HTMLButtonElement> =>
+    (action: Actions): React.MouseEventHandler<HTMLButtonElement> =>
     event => {
       if (!textFieldRef.current) return;
 
