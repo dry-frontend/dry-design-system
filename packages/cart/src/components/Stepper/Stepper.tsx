@@ -39,7 +39,7 @@ function Stepper(
     value: number;
   }>();
 
-  const handleKeyPress: React.KeyboardEventHandler<HTMLInputElement> = event => {
+  const handleDisableNumericInput: React.KeyboardEventHandler<HTMLInputElement> = event => {
     const { key } = event;
     const isNumber = Boolean(key.match(/[\d]/g));
 
@@ -50,7 +50,7 @@ function Stepper(
     rest.onKeyPress?.(event);
   };
 
-  const handleClickToChange =
+  const handleUpdateNumber =
     (action: 'INCREASE' | 'DECREASE'): React.MouseEventHandler<HTMLButtonElement> =>
     event => {
       if (!textFieldRef.current) return;
@@ -115,7 +115,7 @@ function Stepper(
           value={value ? value : undefined}
           defaultValue={defaultValue}
           disabled={textFieldDisabled}
-          onKeyPress={handleKeyPress}
+          onKeyPress={handleDisableNumericInput}
           {...rest}
         />
 
@@ -132,7 +132,7 @@ function Stepper(
         <S.ControlButton
           type="button"
           disabled={isIncreaseDisabled}
-          onClick={handleClickToChange('INCREASE')}
+          onClick={handleUpdateNumber('INCREASE')}
         >
           <FontAwesomeIcon icon={faCaretUp} />
         </S.ControlButton>
@@ -140,7 +140,7 @@ function Stepper(
         <S.ControlButton
           type="button"
           disabled={isDecreaseDisabled}
-          onClick={handleClickToChange('DECREASE')}
+          onClick={handleUpdateNumber('DECREASE')}
         >
           <FontAwesomeIcon icon={faCaretDown} />
         </S.ControlButton>
