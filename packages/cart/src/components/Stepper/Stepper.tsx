@@ -35,7 +35,7 @@ function Stepper(
   }: StepperProps,
   parentRef: React.ForwardedRef<HTMLInputElement | null>
 ) {
-  const isControlComponent = Boolean(value);
+  const isControlledComponent = Boolean(value);
   const textFieldRef = useRef<HTMLInputElement | null>(null);
 
   const [previousAction, setPreviousAction] = useState<{
@@ -91,7 +91,7 @@ function Stepper(
 
       setPreviousAction({ type: action, value: currentNumber });
 
-      if (!isControlComponent) {
+      if (!isControlledComponent) {
         textFieldRef.current.value = String(
           action === 'INCREASE' ? currentNumber + 1 : currentNumber - 1
         );
