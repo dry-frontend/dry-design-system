@@ -112,7 +112,7 @@ function Stepper(
           type="number"
           min={min}
           max={max}
-          value={value ? value : undefined}
+          value={value}
           defaultValue={defaultValue}
           disabled={textFieldDisabled}
           onKeyPress={handleDisableNumericInput}
