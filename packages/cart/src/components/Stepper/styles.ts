@@ -1,6 +1,6 @@
 import PlainButton from 'components/Button/PlainButton';
-import styled, { Keyframes, css, keyframes } from 'styled-components';
-import { Actions } from './Stepper';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const InputWrappedFlexBox = styled.div`
   position: relative;
@@ -13,7 +13,7 @@ export const InputWrappedFlexBox = styled.div`
   overflow: hidden;
 `;
 
-export const CurrentNumberTextField = styled.input`
+export const CurrentNumberTextField = styled(motion.input)`
   appearance: textfield;
   width: 100%;
   height: 100%;
@@ -61,59 +61,4 @@ export const ControlButton = styled(PlainButton)`
   &:disabled {
     color: #ccc;
   }
-`;
-
-const SPRING_ANIMATION_KEYFRAMES: Record<Actions, Keyframes> = {
-  INCREASE: keyframes`
-    from {
-      transform: translateY(0);
-    }
-
-    to {
-      transform: translateY(-100%);
-    }
-  `,
-  DECREASE: keyframes`
-    from {
-      transform: translateY(0);
-    }
-
-    to {
-      transform: translateY(100%);
-    }
-`
-};
-
-export const SpringAnimation = styled.div<{ status: Actions; count: number }>`
-  &,
-  &::before,
-  &::after {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 18px;
-    background-color: #fff;
-  }
-
-  ${({ count, status }) => css`
-    &::before {
-      top: 0%;
-      content: '${count}';
-    }
-
-    &::after {
-      top: ${status === 'INCREASE' ? '100%' : '-100%'};
-      content: '${status === 'INCREASE' ? count + 1 : count - 1}';
-    }
-  `}
-
-  animation: ease 0.2s ${({ status }) => SPRING_ANIMATION_KEYFRAMES[status]};
-  animation-fill-mode: forwards;
 `;

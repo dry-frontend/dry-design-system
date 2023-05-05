@@ -8,7 +8,11 @@ import React, { forwardRef, useRef, useState } from 'react';
 
 import * as S from './styles';
 
-export interface StepperProps extends React.InputHTMLAttributes<HTMLInputElement> {
+import { HTMLMotionProps } from 'framer-motion';
+import { useAnimation } from 'framer-motion';
+import { useEffect } from 'react';
+
+export interface StepperProps extends HTMLMotionProps<'input'> {
   min?: number;
   max?: number;
   textFieldDisabled?: boolean;
@@ -35,9 +39,29 @@ function Stepper(
   const textFieldRef = useRef<HTMLInputElement | null>(null);
 
   const [previousAction, setPreviousAction] = useState<{
-    action: Actions;
+    type: Actions;
     value: number;
   }>();
+  const springAnimationControl = useAnimation();
+
+  useEffect(
+    function triggerSpringAnimation() {
+      if (!previousAction) return;
+
+      const transition = {
+        type: 'spring',
+        stiffness: 2000,
+        damping: 100
+      };
+
+      springAnimationControl.set({
+        translateY: previousAction?.type === 'INCREASE' ? '100%' : '-100%',
+        transition
+      });
+      springAnimationControl.start({ translateY: '0%', transition });
+    },
+    [previousAction, springAnimationControl]
+  );
 
   const handleDisableNumericInput: React.KeyboardEventHandler<HTMLInputElement> = event => {
     const { key } = event;
@@ -65,7 +89,7 @@ function Stepper(
 
       if (!isInRange) return;
 
-      setPreviousAction({ action, value: currentNumber });
+      setPreviousAction({ type: action, value: currentNumber });
 
       if (!isControlComponent) {
         textFieldRef.current.value = String(
@@ -110,22 +134,16 @@ function Stepper(
         <S.CurrentNumberTextField
           ref={setRefs}
           type="number"
+          animate={springAnimationControl}
           min={min}
           max={max}
           value={value}
           defaultValue={defaultValue}
           disabled={textFieldDisabled}
           onKeyPress={handleDisableNumericInput}
+          onAnimationComplete={() => setPreviousAction(undefined)}
           {...rest}
         />
-
-        {previousAction && (
-          <S.SpringAnimation
-            status={previousAction.action}
-            count={previousAction.value}
-            onAnimationEnd={() => setPreviousAction(undefined)}
-          />
-        )}
       </S.InputWrappedFlexBox>
 
       <FlexBox>

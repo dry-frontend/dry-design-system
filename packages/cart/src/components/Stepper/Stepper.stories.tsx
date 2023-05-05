@@ -64,7 +64,7 @@ export const 비제어_컴포넌트_예시: Story = {
         onSubmit={handleSubmit}
         style={{ display: 'flex', gap: '20px', flexDirection: 'column' }}
       >
-        <Stepper ref={ref} name="stepper" />
+        <Stepper ref={ref} min={1} max={10} defaultValue={1} name="stepper" />
         <button type="submit" style={{ width: '100%' }}>
           전송
         </button>
