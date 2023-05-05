@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { ThumbnailSize, ThumbnailObjectFit } from 'components/Thumbnail/types';
+import { ThumbnailSize } from 'components/Thumbnail/types';
 
 export const ThumbnailStyles = {
   Size: {
@@ -15,45 +15,21 @@ export const ThumbnailStyles = {
       width: 100px;
       height: 100px;
     `
-  },
-  ObjectFit: {
-    fill: css`
-      object-fit: fill;
-    `,
-    contain: css`
-      object-fit: contain;
-    `,
-    cover: css`
-      object-fit: cover;
-    `,
-    none: css`
-      object-fit: none;
-    `,
-    scaleDown: css`
-      object-fit: scale-dow;
-    `
   }
 };
 
 export const S = {
   Thumbnail: styled.img<{
     size: ThumbnailSize;
-    objectFit: ThumbnailObjectFit;
+    objectFit: React.CSSProperties['objectFit'];
     isTransparent: boolean;
     isCursorPointer: boolean;
   }>`
     border: 1px solid #f5f5f5;
-    ${({ isTransparent }) =>
-      isTransparent &&
-      css`
-        opacity: 0.5;
-      `};
-    ${({ isCursorPointer }) =>
-      isCursorPointer &&
-      css`
-        cursor: pointer;
-      `}
-    ${({ size }) => ThumbnailStyles.Size[size]};
-    ${({ objectFit }) => ThumbnailStyles.ObjectFit[objectFit]};
+
+    opacity: ${({ isTransparent }) => isTransparent && '0.5'};
+    cursor: ${({ isCursorPointer }) => isCursorPointer && 'pointer'};
+    object-fit: ${({ objectFit }) => objectFit || 'initial'}
+      ${({ size }) => ThumbnailStyles.Size[size]};
   `
 };

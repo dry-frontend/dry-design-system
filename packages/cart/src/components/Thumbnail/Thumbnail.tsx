@@ -1,9 +1,9 @@
 import { S } from 'components/Thumbnail/styles';
-import { ThumbnailSize, ThumbnailObjectFit } from 'components/Thumbnail/types';
+import { ThumbnailSize } from 'components/Thumbnail/types';
 
 interface ThumbnailProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   size?: ThumbnailSize;
-  objectFit?: ThumbnailObjectFit;
+  objectFit?: React.CSSProperties['objectFit'];
   isTransparent?: boolean;
   isCursorPointer?: boolean;
 }
