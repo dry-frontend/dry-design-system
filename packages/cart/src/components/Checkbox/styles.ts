@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import checkImage from 'assets/check.svg';
 
 const Input = styled.input`
-  border: 0;
+  /* border: 0;
   clip: rect(0px, 0px, 0px, 0px);
   height: 1px;
   width: 1px;
@@ -9,18 +10,19 @@ const Input = styled.input`
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
-  position: absolute;
+  position: absolute; */
+  display: none;
 `;
 
-const ImageWrapper = styled.span`
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+const CheckImg = styled.div`
   width: 24px;
   height: 24px;
   border-radius: 3px;
   border: 1px solid #95b7b8;
   background-color: #ffffff;
+  background-image: url(${checkImage});
+  background-position: center center;
+  background-repeat: no-repeat;
 
   ${Input}:checked + & {
     background-color: #317172;
@@ -36,5 +38,5 @@ const Label = styled.label`
 export const S = {
   Label,
   Input,
-  ImageWrapper
+  CheckImg
 };
