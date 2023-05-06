@@ -1,2 +1,5 @@
 # .gitignore
 node_modules/
+
+# storybook build
+storybook-static/
