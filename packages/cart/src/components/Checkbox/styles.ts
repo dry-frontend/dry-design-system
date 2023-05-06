@@ -2,15 +2,6 @@ import styled from 'styled-components';
 import checkImage from 'assets/check.svg';
 
 const Input = styled.input`
-  /* border: 0;
-  clip: rect(0px, 0px, 0px, 0px);
-  height: 1px;
-  width: 1px;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  position: absolute; */
   display: none;
 `;
 
