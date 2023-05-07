@@ -11,7 +11,8 @@ export const colors = {
   BLACK_500: '#111111',
   BLACK_400: '#525252',
   BLACK_300: '#737373',
-  WHITE: '#FFFFFF'
+  WHITE: '#FFFFFF',
+  none: 'none'
 };
 
 export const zIndex = {
@@ -24,3 +25,5 @@ export const theme = {
   colors,
   zIndex
 } as const;
+
+export type Colors = keyof typeof colors;
