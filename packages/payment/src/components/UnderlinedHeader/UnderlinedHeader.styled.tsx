@@ -7,9 +7,10 @@ export const Header = styled.h3<UnderlinedHeaderProps>`
   margin: 0;
   padding: 0 4px;
 
+  color: ${({ fontColor }) => fontColor || theme.colors.BLACK_450};
   font-size: 16px;
-  color: ${theme.colors.BLACK_450};
   font-weight: ${({ fontWeight }) => fontWeight || 'normal'};
+  text-align: ${({ textAlign }) => textAlign || 'start'};
 
   border: 0;
   border-bottom-width: 3px;
