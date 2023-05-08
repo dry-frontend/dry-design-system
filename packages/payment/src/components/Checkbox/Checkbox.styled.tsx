@@ -3,6 +3,8 @@ import { theme } from 'styles/theme';
 import { CheckboxProps } from './Checkbox';
 
 export const Checkbox = styled.input<CheckboxProps>`
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 
   width: 20px;
