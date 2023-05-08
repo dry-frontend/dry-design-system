@@ -31,11 +31,7 @@ export const Circle = styled.div<CircleProps>`
   margin-bottom: 10px;
 
   background: ${({ gradient, chipColor }) =>
-    gradient
-      ? chipColor
-        ? radialGradientGenerator(chipColor)
-        : radialGradientGenerator(theme.colors.PRIMARY)
-      : chipColor || theme.colors.PRIMARY};
+    gradient ? radialGradientGenerator(chipColor) : chipColor};
 `;
 
 export const Text = styled.span`

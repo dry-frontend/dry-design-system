@@ -2,8 +2,8 @@ import React, { ButtonHTMLAttributes } from 'react';
 import * as S from './ColorChipButton.styled';
 
 export interface ColorChipButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  chipColor?: string;
-  text?: string;
+  chipColor: string;
+  text: string;
   gradient?: boolean;
 }
 
