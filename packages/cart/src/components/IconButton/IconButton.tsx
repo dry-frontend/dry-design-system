@@ -1,3 +1,4 @@
+import Icon from 'components/Icon/Icon';
 import { S } from 'components/IconButton/styles';
 
 interface IconButtonProps {
@@ -7,7 +8,7 @@ interface IconButtonProps {
 function IconButton({ iconUrl }: IconButtonProps) {
   return (
     <S.IconButton variant="secondary" size="small">
-      <S.Icon src={iconUrl} />
+      <Icon src={iconUrl} />
     </S.IconButton>
   );
 }

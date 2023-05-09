@@ -1,6 +1,7 @@
 import { getButtonPadding } from 'components/Button/getButtonSize';
 import { S } from 'components/Button/styles';
 import { ButtonSize, ButtonType, ButtonVariant } from 'components/Button/types';
+import Icon from 'components/Icon/Icon';
 import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner';
 import Chip from 'components/chip/Chip';
 import { motion } from 'framer-motion';
@@ -63,12 +64,12 @@ function Button({
       )}
       {!loading && prefixIconURL && (
         <S.PrefixIconWrapper variant={variant} size={size}>
-          <S.PrefixIcon src={prefixIconURL} />
+          <Icon src={prefixIconURL} />
         </S.PrefixIconWrapper>
       )}
 
       <S.ButtonTextWrapper>
-        <S.ButtonText>{children}</S.ButtonText>
+        {children}
         {suffix && (
           <Chip variant={variant} initial={initialLeft} animate={animateAppear}>
             {suffix}

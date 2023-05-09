@@ -6,10 +6,5 @@ export const S = {
     width: 30px;
     height: 30px;
     border-radius: 10px;
-  `,
-
-  Icon: styled.img`
-    width: 15px;
-    height: 15px;
   `
 };
