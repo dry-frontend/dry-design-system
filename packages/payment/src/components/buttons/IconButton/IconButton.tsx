@@ -1,4 +1,4 @@
-import { Button } from './style';
+import { Button } from './IconButton.styled';
 
 interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   width?: number;

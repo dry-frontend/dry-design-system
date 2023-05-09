@@ -1,5 +1,5 @@
-import { Colors, colors } from 'styles/theme';
-import { Button, Text } from './style';
+import { Colors } from 'styles/theme';
+import { Button, Text } from './TextButton.styled';
 
 interface TextButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant: 'contained' | 'outlined' | 'text';
