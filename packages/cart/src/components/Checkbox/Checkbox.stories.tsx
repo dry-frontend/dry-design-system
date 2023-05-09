@@ -33,3 +33,20 @@ export const WithText: Story = {
     </Checkbox>
   )
 };
+
+export const WithCustomLabelProps: Story = {
+  render: () => {
+    const labelProps = {
+      htmlFor: 'custom',
+      style: {
+        color: 'green'
+      }
+    };
+
+    return (
+      <Checkbox labelProps={labelProps} id="custom">
+        <span>전체 선택</span>
+      </Checkbox>
+    );
+  }
+};

@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import checkImage from 'assets/check.svg';
 
-const Input = styled.input`
+export const Input = styled.input`
   display: none;
 `;
 
-const CheckImg = styled.div`
+export const CheckImg = styled.div`
   width: 24px;
   height: 24px;
   border-radius: 3px;
@@ -20,14 +20,8 @@ const CheckImg = styled.div`
   }
 `;
 
-const Label = styled.label`
+export const Label = styled.label`
   display: inline-flex;
   align-items: center;
   gap: 8px;
 `;
-
-export const S = {
-  Label,
-  Input,
-  CheckImg
-};

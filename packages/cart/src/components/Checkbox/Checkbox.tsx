@@ -1,12 +1,19 @@
-import { forwardRef, InputHTMLAttributes, PropsWithChildren } from 'react';
-import { S } from './styles';
+import { forwardRef, InputHTMLAttributes, PropsWithChildren, LabelHTMLAttributes } from 'react';
+import * as S from './styles';
 
-type Props = PropsWithChildren<InputHTMLAttributes<HTMLInputElement>>;
+type Props = PropsWithChildren<InputHTMLAttributes<HTMLInputElement>> & {
+  labelProps?: LabelHTMLAttributes<HTMLLabelElement>;
+};
 
-function Checkbox({ children, ...props }: Props, ref: React.ForwardedRef<HTMLInputElement | null>) {
+function Checkbox(
+  { labelProps, children, ...inputProps }: Props,
+  parentRef: React.ForwardedRef<HTMLInputElement | null>
+) {
+  const { type, ...usingInputProps } = inputProps;
+
   return (
-    <S.Label>
-      <S.Input type="checkbox" ref={ref} {...props} />
+    <S.Label {...labelProps}>
+      <S.Input type="checkbox" ref={parentRef} {...usingInputProps} />
       <S.CheckImg />
       {children}
     </S.Label>
