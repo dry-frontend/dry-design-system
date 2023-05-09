@@ -1,4 +1,4 @@
-import { CardNumber, FlexWrapper, IcChip, CardNumberWrapper, Text, Wrapper } from './style';
+import { CardNumber, FlexWrapper, IcChip, CardNumberWrapper, Text, Wrapper } from './Card.styled';
 
 interface CardProps {
   size: CardSize;
