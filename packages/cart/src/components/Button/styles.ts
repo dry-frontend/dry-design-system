@@ -179,6 +179,21 @@ export const ButtonPadding = {
   }
 };
 
+export const PrefixSize = {
+  large: css`
+    width: 30px;
+    height: 30px;
+  `,
+  medium: css`
+    width: 24px;
+    height: 24px;
+  `,
+  small: css`
+    width: 22px;
+    height: 22px;
+  `
+};
+
 export const S = {
   Button: styled(motion.button)<{
     size: ButtonSize;
@@ -229,17 +244,8 @@ export const S = {
     height: 30px;
     background-color: rgba(0, 0, 0, 0);
 
-    ${({ size }) =>
-      (size === 'small' &&
-        css`
-          width: 22px;
-          height: 22px;
-        `) ||
-      (size === 'medium' &&
-        css`
-          width: 24px;
-          height: 24px;
-        `)}
+    ${({ size }) => size === 'small' && PrefixSize.small}
+    ${({ size }) => size === 'medium' && PrefixSize.medium}
   `,
 
   PrefixIconWrapper: styled.div<{ variant: ButtonVariant; size: ButtonSize }>`
@@ -253,17 +259,8 @@ export const S = {
 
     ${({ variant }) => variant === 'primary' && 'background-color: #ffffff;'}
 
-    ${({ size }) =>
-      (size === 'small' &&
-        css`
-          width: 22px;
-          height: 22px;
-        `) ||
-      (size === 'medium' &&
-        css`
-          width: 24px;
-          height: 24px;
-        `)}
+    ${({ size }) => size === 'small' && PrefixSize.small}
+    ${({ size }) => size === 'medium' && PrefixSize.medium}
   `,
 
   ButtonTextWrapper: styled.div`
