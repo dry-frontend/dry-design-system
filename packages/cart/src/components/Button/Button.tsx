@@ -2,6 +2,7 @@ import { getButtonPadding } from 'components/Button/getButtonSize';
 import { S } from 'components/Button/styles';
 import { ButtonSize, ButtonType, ButtonVariant } from 'components/Button/types';
 import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner';
+import Chip from 'components/chip/Chip';
 import { motion } from 'framer-motion';
 import React from 'react';
 
@@ -29,6 +30,9 @@ function Button({
 }: ButtonProps) {
   const hasPrefix = prefixIconURL || loading ? true : false;
   const hasSuffix = suffix ? true : false;
+  const initialRight = { x: 10, opacity: 0 };
+  const initialLeft = { x: -10, opacity: 0 };
+  const animateAppear = { x: 0, opacity: 1 };
 
   return (
     <S.Button
@@ -37,24 +41,22 @@ function Button({
       type={type}
       disabled={disabled || loading}
       prefixIcon={hasPrefix}
-      suffix={hasSuffix}
-      loading={loading}
+      whileHover={{ opacity: 0.7 }}
+      whileTap={disabled ? { scale: 1 } : { scale: 0.95 }}
       padding={getButtonPadding({
         variant,
         size,
         hasPrefix,
         hasSuffix
       })}
-      whileHover={{ opacity: 0.7 }}
-      whileTap={disabled ? { scale: 1 } : { scale: 0.95 }}
       {...props}
     >
       {loading && (
         <S.LoadingWrapper
           variant={variant}
           size={size}
-          initial={{ x: 10, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          initial={initialRight}
+          animate={animateAppear}
         >
           <LoadingSpinner />
         </S.LoadingWrapper>
@@ -68,14 +70,9 @@ function Button({
       <S.ButtonTextWrapper>
         <S.ButtonText>{children}</S.ButtonText>
         {suffix && (
-          <S.SuffixWrapper
-            size={size}
-            variant={variant}
-            initial={{ x: -10, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-          >
+          <Chip variant={variant} initial={initialLeft} animate={animateAppear}>
             {suffix}
-          </S.SuffixWrapper>
+          </Chip>
         )}
       </S.ButtonTextWrapper>
     </S.Button>

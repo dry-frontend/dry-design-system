@@ -201,8 +201,6 @@ export const S = {
     padding: FlattenSimpleInterpolation;
     disabled: boolean;
     prefixIcon: boolean;
-    suffix: boolean;
-    loading: boolean;
   }>`
     all: unset;
     box-sizing: border-box;
@@ -272,30 +270,5 @@ export const S = {
 
   ButtonText: styled.p`
     margin: 0;
-  `,
-
-  SuffixWrapper: styled(motion.div)<{ size: ButtonSize; variant: ButtonVariant }>`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-width: 30px;
-    width: fit-content;
-    height: 22px;
-    border-radius: 21px;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 14.52px;
-
-    ${({ variant }) =>
-      variant === 'primary'
-        ? css`
-            background-color: #ffffff;
-            color: #317172;
-          `
-        : css`
-            background: #317172;
-            color: #ffffff;
-          `}
   `
 };
