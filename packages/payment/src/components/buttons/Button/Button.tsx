@@ -7,8 +7,8 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   padding?: string;
   isDisabled?: boolean;
   children: string;
-  onClick?(): void;
-  onSubmit?(): void;
+  onClick?(): React.MouseEvent<HTMLButtonElement>;
+  onSubmit?(): React.FormEvent<HTMLButtonElement>;
 }
 
 type ButtonVariant = 'contained' | 'outlined' | 'text';

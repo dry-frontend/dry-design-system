@@ -5,7 +5,7 @@ interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> 
   height?: number;
   isDisabled?: boolean;
   children: string;
-  onClick?(): void;
+  onClick?(): React.MouseEvent<HTMLButtonElement>;
 }
 
 export const IconButton = ({
