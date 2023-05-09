@@ -48,35 +48,35 @@ export const ButtonPadding = {
   primary: {
     large: {
       normal: css`
-        padding: 16px 18.35px 14px 18px;
+        padding: 15px 18px;
       `,
       prefix: css`
-        padding: 9px 18.35px 9px 18px;
+        padding: 9px 18px;
       `,
       suffix: css`
-        padding: 14px 8.35px 12px 9px;
+        padding: 13px 9px;
       `,
       affix: css`
-        padding: 9px 18.35px 9px 18px;
+        padding: 9px 18px;
       `
     },
     medium: {
       normal: css`
-        padding: 10px 14.72px 10px 15px;
+        padding: 10px 15px;
       `,
       prefix: css`
-        padding: 7px 14.72px 7px 15px;
+        padding: 7px 15px;
       `,
       suffix: css`
-        padding: 8px 4.72px 8px 15px;
+        padding: 8px 5px 8px 15px;
       `,
       affix: css`
-        padding: 7px 14.72px 7px 15px;
+        padding: 7px 15px;
       `
     },
     small: {
       normal: css`
-        padding: 7px 12px 5px 12px;
+        padding: 6px 12px;
       `,
       prefix: css`
         padding: 3px 18.35px 3px 10px;
@@ -92,35 +92,35 @@ export const ButtonPadding = {
   secondary: {
     large: {
       normal: css`
-        padding: 15px 18.35px 13px 18px;
+        padding: 14px 18px;
       `,
       prefix: css`
-        padding: 8px 18.35px 8px 18px;
+        padding: 8px 18px;
       `,
       suffix: css`
-        padding: 13px 8.35px 11px 9px;
+        padding: 12px 9px;
       `,
       affix: css`
-        padding: 8px 18.35px 8px 18px;
+        padding: 8px 18px;
       `
     },
     medium: {
       normal: css`
-        padding: 9px 14.72px 9px 15px;
+        padding: 9px 15px;
       `,
       prefix: css`
-        padding: 6px 14.72px 6px 15px;
+        padding: 6px 15px;
       `,
       suffix: css`
         padding: 7px 4.72px 7px 15px;
       `,
       affix: css`
-        padding: 6px 14.72px 6px 15px;
+        padding: 6px 15px;
       `
     },
     small: {
       normal: css`
-        padding: 7px 12px 4px 12px;
+        padding: 5px 12px;
       `,
       prefix: css`
         padding: 2px 18.35px 2px 10px;
@@ -136,35 +136,35 @@ export const ButtonPadding = {
   plain: {
     large: {
       normal: css`
-        padding: 16px 18.35px 14px 18px;
+        padding: 15px 18px;
       `,
       prefix: css`
-        padding: 9px 18.35px 9px 18px;
+        padding: 9px 18px;
       `,
       suffix: css`
-        padding: 14px 8.35px 12px 9px;
+        padding: 13px 9px;
       `,
       affix: css`
-        padding: 9px 18.35px 9px 18px;
+        padding: 9px 18px;
       `
     },
     medium: {
       normal: css`
-        padding: 10px 14.72px 10px 15px;
+        padding: 10px 15px;
       `,
       prefix: css`
-        padding: 7px 14.72px 7px 15px;
+        padding: 7px 15px;
       `,
       suffix: css`
         padding: 8px 4.72px 8px 15px;
       `,
       affix: css`
-        padding: 7px 14.72px 7px 15px;
+        padding: 7px 15px;
       `
     },
     small: {
       normal: css`
-        padding: 7px 12px 5px 12px;
+        padding: 6px 12px;
       `,
       prefix: css`
         padding: 3px 18.35px 3px 10px;
@@ -228,12 +228,6 @@ export const S = {
         opacity: 0.7;
       `}
   `,
-
-  PrefixIcon: styled.img`
-    width: 15px;
-    height: 15px;
-  `,
-
   LoadingWrapper: styled(motion.div)<{ variant: ButtonVariant; size: ButtonSize }>`
     display: flex;
     justify-content: center;
@@ -266,9 +260,5 @@ export const S = {
     justify-content: center;
     align-items: center;
     gap: 10px;
-  `,
-
-  ButtonText: styled.p`
-    margin: 0;
   `
 };
