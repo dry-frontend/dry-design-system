@@ -1,7 +1,7 @@
 import { Colors } from 'styles/theme';
-import { Button, Text } from './TextButton.styled';
+import { Wrapper, Text } from './Button.styled';
 
-interface TextButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant: 'contained' | 'outlined' | 'text';
   fontSize?: number;
   padding?: string;
@@ -72,16 +72,16 @@ export const buttonColorSet: ButtonStylesConfig = {
   }
 };
 
-export const TextButton = ({
+export const Button = ({
   padding = '8px 28px 8px 28px',
   fontSize = 16,
-  variant,
+  variant = 'contained',
   isDisabled = false,
   children,
   ...props
-}: TextButtonProps) => {
+}: ButtonProps) => {
   return (
-    <Button
+    <Wrapper
       buttonStyles={buttonColorSet[variant]}
       padding={padding}
       isDisabled={isDisabled ? 'disabled' : 'default'}
@@ -94,6 +94,6 @@ export const TextButton = ({
       >
         {children}
       </Text>
-    </Button>
+    </Wrapper>
   );
 };

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ButtonState, ButtonStylesAttributeConfig } from './TextButton';
+import { ButtonState, ButtonStylesAttributeConfig } from './Button';
 
 interface ButtonProps {
   buttonStyles: ButtonStylesAttributeConfig;
@@ -13,7 +13,7 @@ interface TextProps {
   isDisabled: ButtonState;
 }
 
-export const Button = styled.button<ButtonProps>`
+export const Wrapper = styled.button<ButtonProps>`
   :hover {
     opacity: 0.8;
   }
