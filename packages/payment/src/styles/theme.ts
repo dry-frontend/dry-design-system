@@ -9,6 +9,8 @@ export const colors = {
   GRAY_100: '#F6F6F6',
   YELLOW_800: '#CBBA64',
   BLACK_500: '#111111',
+  BLACK_475: '#333333',
+  BLACK_450: '#383838',
   BLACK_400: '#525252',
   BLACK_300: '#737373',
   WHITE: '#FFFFFF'
