@@ -14,15 +14,15 @@ export const Large: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
       <Button variant="primary" size="large">
-        324,500원 결제하기
+        장바구니 담기
       </Button>
 
       <Button variant="secondary" size="large">
-        324,500원 결제하기
+        상품 더 담기
       </Button>
 
       <Button variant="plain" size="large">
-        324,500원 결제하기
+        장바구니
       </Button>
     </div>
   )
@@ -32,11 +32,11 @@ export const Medium: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
       <Button variant="primary" size="medium">
-        장바구니
+        장바구니 담기
       </Button>
 
       <Button variant="secondary" size="medium">
-        장바구니
+        상품 더 담기
       </Button>
 
       <Button variant="plain" size="medium">
@@ -50,33 +50,15 @@ export const Small: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
       <Button variant="primary" size="small">
-        장바구니
+        장바구니 담기
       </Button>
 
       <Button variant="secondary" size="small">
-        장바구니
+        상품 더 담기
       </Button>
 
       <Button variant="plain" size="small">
         장바구니
-      </Button>
-    </div>
-  )
-};
-
-export const Tiny: Story = {
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
-      <Button variant="primary" size="tiny">
-        상품삭제
-      </Button>
-
-      <Button variant="secondary" size="tiny">
-        상품삭제
-      </Button>
-
-      <Button variant="plain" size="tiny">
-        상품삭제
       </Button>
     </div>
   )
@@ -88,16 +70,30 @@ export const Loading: Story = {
       <Button variant="primary" size="large" loading={true}>
         로딩중
       </Button>
+      <Button variant="primary" size="medium" loading={true}>
+        로딩중
+      </Button>
+      <Button variant="primary" size="small" loading={true}>
+        로딩중
+      </Button>
 
+      <Button variant="secondary" size="large" loading={true}>
+        로딩중
+      </Button>
       <Button variant="secondary" size="medium" loading={true}>
         로딩중
       </Button>
-
-      <Button variant="plain" size="small" loading={true}>
+      <Button variant="secondary" size="small" loading={true}>
         로딩중
       </Button>
 
-      <Button variant="primary" size="tiny" loading={true}>
+      <Button variant="plain" size="large" loading={true}>
+        로딩중
+      </Button>
+      <Button variant="plain" size="medium" loading={true}>
+        로딩중
+      </Button>
+      <Button variant="plain" size="small" loading={true}>
         로딩중
       </Button>
     </div>
@@ -108,19 +104,141 @@ export const PrefixIcon: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
       <Button variant="primary" size="large" prefixIconURL={cartIcon}>
+        장바구니 담기
+      </Button>
+      <Button variant="primary" size="medium" prefixIconURL={cartIcon}>
+        상품 더 담기
+      </Button>
+      <Button variant="primary" size="small" prefixIconURL={cartIcon}>
         장바구니
       </Button>
 
+      <Button variant="secondary" size="large" prefixIconURL={cartIcon}>
+        장바구니 담기
+      </Button>
       <Button variant="secondary" size="medium" prefixIconURL={cartIcon}>
+        상품 더 담기
+      </Button>
+      <Button variant="secondary" size="small" prefixIconURL={cartIcon}>
         장바구니
       </Button>
 
+      <Button variant="plain" size="large" prefixIconURL={cartIcon}>
+        장바구니 담기
+      </Button>
+      <Button variant="plain" size="medium" prefixIconURL={cartIcon}>
+        상품 더 담기
+      </Button>
       <Button variant="plain" size="small" prefixIconURL={cartIcon}>
         장바구니
       </Button>
+    </div>
+  )
+};
 
-      <Button variant="primary" size="tiny" prefixIconURL={cartIcon}>
+export const SuffixIcon: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+      <Button variant="primary" size="large" suffix={15}>
+        장바구니 담기
+      </Button>
+      <Button variant="primary" size="medium" suffix={15}>
+        상품 더 담기
+      </Button>
+      <Button variant="primary" size="small" suffix={15}>
         장바구니
+      </Button>
+
+      <Button variant="secondary" size="large" suffix={15}>
+        장바구니 담기
+      </Button>
+      <Button variant="secondary" size="medium" suffix={15}>
+        상품 더 담기
+      </Button>
+      <Button variant="secondary" size="small" suffix={15}>
+        장바구니
+      </Button>
+
+      <Button variant="plain" size="large" suffix={15}>
+        장바구니 담기
+      </Button>
+      <Button variant="plain" size="medium" suffix={15}>
+        상품 더 담기
+      </Button>
+      <Button variant="plain" size="small" suffix={15}>
+        장바구니
+      </Button>
+    </div>
+  )
+};
+
+export const FullIcon: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+      <Button variant="primary" size="large" prefixIconURL={cartIcon} suffix={12}>
+        장바구니 담기
+      </Button>
+      <Button variant="primary" size="medium" prefixIconURL={cartIcon} suffix={12}>
+        상품 더 담기
+      </Button>
+      <Button variant="primary" size="small" prefixIconURL={cartIcon} suffix={12}>
+        장바구니
+      </Button>
+
+      <Button variant="secondary" size="large" prefixIconURL={cartIcon} suffix={12}>
+        장바구니 담기
+      </Button>
+      <Button variant="secondary" size="medium" prefixIconURL={cartIcon} suffix={12}>
+        상품 더 담기
+      </Button>
+      <Button variant="secondary" size="small" prefixIconURL={cartIcon} suffix={12}>
+        장바구니
+      </Button>
+
+      <Button variant="plain" size="large" prefixIconURL={cartIcon} suffix={12}>
+        장바구니 담기
+      </Button>
+      <Button variant="plain" size="medium" prefixIconURL={cartIcon} suffix={12}>
+        상품 더 담기
+      </Button>
+      <Button variant="plain" size="small" prefixIconURL={cartIcon} suffix={12}>
+        장바구니
+      </Button>
+    </div>
+  )
+};
+
+export const FullIconLoading: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+      <Button variant="primary" size="large" prefixIconURL={cartIcon} suffix={12} loading={true}>
+        장바구니 담기
+      </Button>
+      <Button variant="primary" size="medium" prefixIconURL={cartIcon} suffix={12} loading={true}>
+        장바구니 담기
+      </Button>
+      <Button variant="primary" size="small" prefixIconURL={cartIcon} suffix={12} loading={true}>
+        장바구니 담기
+      </Button>
+
+      <Button variant="secondary" size="large" prefixIconURL={cartIcon} suffix={12} loading={true}>
+        장바구니 담기
+      </Button>
+      <Button variant="secondary" size="medium" prefixIconURL={cartIcon} suffix={12} loading={true}>
+        장바구니 담기
+      </Button>
+      <Button variant="secondary" size="small" prefixIconURL={cartIcon} suffix={12} loading={true}>
+        장바구니 담기
+      </Button>
+
+      <Button variant="plain" size="large" prefixIconURL={cartIcon} suffix={12} loading={true}>
+        장바구니 담기
+      </Button>
+      <Button variant="plain" size="medium" prefixIconURL={cartIcon} suffix={12} loading={true}>
+        장바구니 담기
+      </Button>
+      <Button variant="plain" size="small" prefixIconURL={cartIcon} suffix={12} loading={true}>
+        장바구니 담기
       </Button>
     </div>
   )
