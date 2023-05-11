@@ -30,6 +30,12 @@ const StepButton = styled.button`
   &:hover {
     cursor: pointer;
   }
+
+  &:disabled {
+    cursor: default;
+
+    opacity: 0.5;
+  }
 `;
 
 export const LeftButton = styled(StepButton)``;

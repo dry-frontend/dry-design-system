@@ -34,7 +34,7 @@ const Carousel = ({ children, onClickPrevButton, onClickNextButton }: CarouselPr
 
   return (
     <S.Container>
-      <S.LeftButton onClick={handleClickPrev} />
+      <S.LeftButton onClick={handleClickPrev} disabled={index === 0} />
       <S.ContentBackground>
         <S.ContentList index={index} totalCount={childrenCount}>
           {React.Children.toArray(children).map((item, index) => (
@@ -42,7 +42,7 @@ const Carousel = ({ children, onClickPrevButton, onClickNextButton }: CarouselPr
           ))}
         </S.ContentList>
       </S.ContentBackground>
-      <S.RightButton onClick={handleClickNext} />
+      <S.RightButton onClick={handleClickNext} disabled={index === childrenCount - 1} />
     </S.Container>
   );
 };
