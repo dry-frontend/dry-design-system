@@ -3,7 +3,15 @@ import Carousel from './Carousel';
 
 const meta: Meta<typeof Carousel> = {
   title: 'Carousel',
-  component: Carousel
+  component: Carousel,
+  argTypes: {
+    onClickNextButton: {
+      control: '-'
+    },
+    onClickPrevButton: {
+      control: '-'
+    }
+  }
 };
 
 export default meta;
