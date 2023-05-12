@@ -27,8 +27,6 @@ export const getButtonPadding = ({
   const left = ButtonPadding[size][affix].left;
   const right = ButtonPadding[size][affix].right;
 
-  console.log('padding: ' + `${top}px ${right}px ${bottom}px ${left}px`);
-
   return css`
     padding: ${top}px ${right}px ${bottom}px ${left}px;
   `;
