@@ -26,9 +26,6 @@ export const Container = styled.div<{ anchor: 'left' | 'right' | 'top' | 'bottom
   background-color: ${({ theme }) => theme.colors.WHITE};
   box-sizing: border-box;
 
-  width: 0;
-  height: 0;
-
   ${({ anchor }) =>
     ((anchor === 'left' || anchor === 'right') &&
       css`
