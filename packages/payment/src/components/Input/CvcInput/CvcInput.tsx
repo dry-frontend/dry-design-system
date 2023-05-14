@@ -6,7 +6,7 @@ const CvcInput = forwardRef(
   ({ ...rest }: InputAttributesType, forwardRef: Ref<HTMLInputElement>) => {
     return (
       <S.CvcContainer>
-        <S.CvcInput type="password" ref={forwardRef} maxLength={3} {...rest} autoFocus />
+        <S.CvcInput type="password" ref={forwardRef} {...rest} autoFocus />
       </S.CvcContainer>
     );
   }
