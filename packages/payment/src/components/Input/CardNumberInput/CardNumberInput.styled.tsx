@@ -17,7 +17,7 @@ export const CardNumberInput = styled(Input)`
   }
 `;
 
-export const Slash = styled.p`
+export const Dash = styled.p`
   font-size: 18px;
   color: ${({ theme }) => theme.colors.BLACK_300};
   margin: 0 4px;

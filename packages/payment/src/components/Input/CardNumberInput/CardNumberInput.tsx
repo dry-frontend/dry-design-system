@@ -6,8 +6,8 @@ const Number = forwardRef(({ ...rest }: InputAttributesType, forwardRef: Ref<HTM
   return <S.CardNumberInput type="number" ref={forwardRef} {...rest} />;
 });
 
-const Slash = () => {
-  return <S.Slash>-</S.Slash>;
+const Dash = () => {
+  return <S.Dash>-</S.Dash>;
 };
 
 const Container = forwardRef(({ children }: PropsWithChildren, forwardRef: Ref<HTMLDivElement>) => (
@@ -16,7 +16,7 @@ const Container = forwardRef(({ children }: PropsWithChildren, forwardRef: Ref<H
 
 const CardNumberInput = Object.assign(Container, {
   Number,
-  Slash
+  Dash
 });
 
 export default CardNumberInput;

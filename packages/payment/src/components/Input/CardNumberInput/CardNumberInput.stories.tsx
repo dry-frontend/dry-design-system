@@ -10,11 +10,11 @@ export default {
 const Template: StoryFn<PropsWithChildren> = args => (
   <CardNumberInput>
     <CardNumberInput.Number />
-    <CardNumberInput.Slash />
+    <CardNumberInput.Dash />
     <CardNumberInput.Number />
-    <CardNumberInput.Slash />
+    <CardNumberInput.Dash />
     <CardNumberInput.Number />
-    <CardNumberInput.Slash />
+    <CardNumberInput.Dash />
     <CardNumberInput.Number />
   </CardNumberInput>
 );
