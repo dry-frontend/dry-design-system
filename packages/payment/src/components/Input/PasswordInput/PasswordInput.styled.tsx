@@ -24,10 +24,10 @@ export const DotWrapper = styled.div`
   height: 45px;
 `;
 
-export const Dot = styled.div`
+export const Dot = styled.div<{ dotColor: string }>`
   width: 5px;
   height: 5px;
   border-radius: 50%;
 
-  background-color: ${({ theme }) => theme.colors.PRIMARY};
+  background-color: ${({ dotColor }) => dotColor};
 `;
