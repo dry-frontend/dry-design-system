@@ -1,0 +1,13 @@
+/**
+  임시 방편 글로벌 스타일입니다.
+  디자인 시스템 한하여 글로벌 스타일 어떻게 정의할지 논의 필요합니다!
+*/
+
+body,
+input,
+textarea,
+*::after {
+  font-family: 'Nunito Sans', -apple-system, '.SFNSText-Regular', 'San Francisco',
+    BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}

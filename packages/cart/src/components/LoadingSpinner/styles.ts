@@ -1,8 +1,7 @@
-import { motion } from 'framer-motion';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 export const S = {
-  Spinner: styled(motion.div)`
+  Spinner: styled.div`
     display: inline-block;
     border: 3px solid rgba(0, 0, 0, 0.1);
     border-top-color: #fff;
