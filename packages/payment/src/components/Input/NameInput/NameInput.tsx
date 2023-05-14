@@ -7,7 +7,7 @@ const NameInput = forwardRef(
   ({ ...rest }: InputAttributesType, forwardRef: Ref<HTMLInputElement>) => {
     return (
       <S.NameContainer>
-        <S.NameInput type="text" ref={forwardRef} {...rest} autoFocus />
+        <S.NameInput type="text" ref={forwardRef} {...rest} />
       </S.NameContainer>
     );
   }
