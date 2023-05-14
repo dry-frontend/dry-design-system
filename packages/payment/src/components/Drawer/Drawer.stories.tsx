@@ -15,7 +15,11 @@ export default {
     },
     anchor: {
       defaultValue: 'bottom',
-      description: 'drawer가 열리는 방향에 따라서 값을 조정할 수 있습니다'
+      description: 'drawer가 열리는 방향에 따라서 값을 조정할 수 있습니다',
+      control: {
+        type: 'radio'
+      },
+      options: ['top', 'bottom', 'left', 'right']
     }
   }
 } as Meta;
