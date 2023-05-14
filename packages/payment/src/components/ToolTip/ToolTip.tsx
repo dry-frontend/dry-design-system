@@ -1,5 +1,5 @@
 import { PropsWithChildren, useContext, useState } from 'react';
-import ToolTipContext from './tooltipContext';
+import ToolTipContext from './TooltipContext';
 
 import * as S from './ToolTip.styled';
 
