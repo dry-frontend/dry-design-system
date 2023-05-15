@@ -5,6 +5,7 @@ interface ButtonProps {
   buttonStyles: ButtonStylesAttributeConfig;
   padding: string;
   isDisabled: ButtonState;
+  primaryColor: string | undefined;
 }
 
 interface TextProps {
@@ -18,21 +19,21 @@ export const Wrapper = styled.button<ButtonProps>`
     opacity: 0.8;
   }
 
-  ${({ padding, buttonStyles, isDisabled, theme }) => `
+  ${({ padding, buttonStyles, isDisabled }) => `
     padding: ${padding};
-    background: ${theme.colors[buttonStyles.back[isDisabled]]};
+    background: ${buttonStyles.back[isDisabled]};
     border: ${
       buttonStyles.line[isDisabled] === 'none'
         ? 'none'
-        : `1px solid ${theme.colors[buttonStyles.line[isDisabled]]}`
+        : `1px solid ${buttonStyles.line[isDisabled]}`
     };
     cursor: ${isDisabled === 'disabled' ? ' not-allowed' : 'pointer'};
   `}
 `;
 
 export const Text = styled.p<TextProps>`
-  ${({ textStyles, fontSize, isDisabled, theme }) => `
-    color: ${theme.colors[textStyles.text[isDisabled]]};
+  ${({ textStyles, fontSize, isDisabled }) => `
+    color: ${textStyles.text[isDisabled]};
     font-size: ${fontSize}px;
   `}
 `;

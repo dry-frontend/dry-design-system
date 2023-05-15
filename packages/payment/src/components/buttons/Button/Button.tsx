@@ -1,8 +1,9 @@
-import { Colors } from 'styles/theme';
+import { Colors, theme } from 'styles/theme';
 import { Wrapper, Text } from './Button.styled';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant: 'contained' | 'outlined' | 'text';
+  variant: ButtonVariant;
+  primaryColor?: string;
   fontSize?: number;
   padding?: string;
   isDisabled?: boolean;
@@ -23,72 +24,76 @@ type ButtonStylesConfig = {
 
 export type ButtonStylesAttributeConfig = {
   [key in ButtonStyleAttribute]: {
-    [key2 in ButtonState]: Colors | 'none';
+    [key2 in ButtonState]: Colors | string | 'none';
   };
 };
 
-export const buttonColorSet: ButtonStylesConfig = {
-  contained: {
+export const getButtonStylesConfig = (primaryColor: string | undefined): ButtonStylesConfig => {
+  return {
+    contained: {
+      text: {
+        default: theme.colors['WHITE'],
+        disabled: theme.colors['WHITE']
+      },
+      back: {
+        default: primaryColor || theme.colors['PRIMARY'],
+        disabled: theme.colors['GRAY_200']
+      },
+      line: {
+        default: 'none',
+        disabled: 'none'
+      }
+    },
+    outlined: {
+      text: {
+        default: primaryColor || theme.colors['PRIMARY'],
+        disabled: theme.colors['GRAY_200']
+      },
+      back: {
+        default: theme.colors['WHITE'],
+        disabled: theme.colors['WHITE']
+      },
+      line: {
+        default: primaryColor || theme.colors['PRIMARY'],
+        disabled: theme.colors['GRAY_200']
+      }
+    },
     text: {
-      default: 'WHITE',
-      disabled: 'WHITE'
-    },
-    back: {
-      default: 'PRIMARY',
-      disabled: 'GRAY_200'
-    },
-    line: {
-      default: 'none',
-      disabled: 'none'
+      text: {
+        default: primaryColor || theme.colors['PRIMARY'],
+        disabled: theme.colors['GRAY_200']
+      },
+      back: {
+        default: 'none',
+        disabled: 'none'
+      },
+      line: {
+        default: 'none',
+        disabled: 'none'
+      }
     }
-  },
-  outlined: {
-    text: {
-      default: 'PRIMARY',
-      disabled: 'GRAY_200'
-    },
-    back: {
-      default: 'WHITE',
-      disabled: 'WHITE'
-    },
-    line: {
-      default: 'PRIMARY',
-      disabled: 'GRAY_200'
-    }
-  },
-  text: {
-    text: {
-      default: 'PRIMARY',
-      disabled: 'GRAY_200'
-    },
-    back: {
-      default: 'none',
-      disabled: 'none'
-    },
-    line: {
-      default: 'none',
-      disabled: 'none'
-    }
-  }
+  };
 };
 
 export const Button = ({
+  variant = 'contained',
+  primaryColor,
   padding = '8px 28px 8px 28px',
   fontSize = 16,
-  variant = 'contained',
   isDisabled = false,
   children,
   ...props
 }: ButtonProps) => {
   return (
     <Wrapper
-      buttonStyles={buttonColorSet[variant]}
+      buttonStyles={getButtonStylesConfig(primaryColor)[variant]}
       padding={padding}
       isDisabled={isDisabled ? 'disabled' : 'default'}
+      primaryColor={primaryColor}
       {...props}
     >
       <Text
-        textStyles={buttonColorSet[variant]}
+        textStyles={getButtonStylesConfig(primaryColor)[variant]}
         fontSize={fontSize}
         isDisabled={isDisabled ? 'disabled' : 'default'}
       >
