@@ -2,11 +2,11 @@ import { PropsWithChildren } from 'react';
 import { Wrapper } from './Header.styled';
 
 interface Props extends PropsWithChildren {
-  backColor?: string;
+  backgroundColor?: string;
 }
 
-const Header = ({ backColor, children }: Props) => {
-  return <Wrapper backColor={backColor}>{children}</Wrapper>;
+const Header = ({ backgroundColor, children }: Props) => {
+  return <Wrapper backgroundColor={backgroundColor}>{children}</Wrapper>;
 };
 
 export default Header;

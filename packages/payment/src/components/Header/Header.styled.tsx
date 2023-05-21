@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface WrapperProps {
-  backColor: string | undefined;
+  backgroundColor?: string;
 }
 
 export const Wrapper = styled.header<WrapperProps>`
@@ -10,5 +10,5 @@ export const Wrapper = styled.header<WrapperProps>`
   left: 0;
   width: 100%;
 
-  background-color: ${({ backColor }) => (backColor ? backColor : 'none')};
+  background-color: ${({ backgroundColor }) => (backgroundColor ? backgroundColor : 'none')};
 `;
