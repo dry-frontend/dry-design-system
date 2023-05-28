@@ -1,6 +1,6 @@
 import { ButtonPadding } from 'components/Button/styles';
 import { ButtonAffix, ButtonSize, ButtonVariant } from 'components/Button/types';
-import { FlattenSimpleInterpolation } from 'styled-components';
+import { FlattenSimpleInterpolation, css } from 'styled-components';
 
 interface getButtonPaddingParams {
   variant: ButtonVariant;
@@ -15,10 +15,19 @@ export const getButtonPadding = ({
   hasPrefix,
   hasSuffix
 }: getButtonPaddingParams): FlattenSimpleInterpolation => {
+  const paddingSubtraction = variant === 'secondary' ? 1 : 0;
+
   let affix: ButtonAffix = 'normal';
   if (hasPrefix && hasSuffix) affix = 'affix';
   if (hasPrefix && !hasSuffix) affix = 'prefix';
   if (!hasPrefix && hasSuffix) affix = 'suffix';
 
-  return ButtonPadding[variant][size][affix];
+  const top = ButtonPadding[size][affix].topBottom - paddingSubtraction;
+  const bottom = ButtonPadding[size][affix].topBottom - paddingSubtraction;
+  const left = ButtonPadding[size][affix].left;
+  const right = ButtonPadding[size][affix].right;
+
+  return css`
+    padding: ${top}px ${right}px ${bottom}px ${left}px;
+  `;
 };
