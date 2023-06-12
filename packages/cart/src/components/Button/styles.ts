@@ -45,136 +45,70 @@ export const ButtonStyles = {
 };
 
 export const ButtonPadding = {
-  primary: {
-    large: {
-      normal: css`
-        padding: 15px 18px;
-      `,
-      prefix: css`
-        padding: 9px 18px;
-      `,
-      suffix: css`
-        padding: 13px 9px;
-      `,
-      affix: css`
-        padding: 9px 18px;
-      `
+  large: {
+    normal: {
+      topBottom: 15,
+      left: 18,
+      right: 18
     },
-    medium: {
-      normal: css`
-        padding: 10px 15px;
-      `,
-      prefix: css`
-        padding: 7px 15px;
-      `,
-      suffix: css`
-        padding: 8px 5px 8px 15px;
-      `,
-      affix: css`
-        padding: 7px 15px;
-      `
+    prefix: {
+      topBottom: 9,
+      left: 18,
+      right: 18
     },
-    small: {
-      normal: css`
-        padding: 6px 12px;
-      `,
-      prefix: css`
-        padding: 3px 18.35px 3px 10px;
-      `,
-      suffix: css`
-        padding: 3px 3px 3px 34px;
-      `,
-      affix: css`
-        padding: 3px 3px 3px 10px;
-      `
+    suffix: {
+      topBottom: 13,
+      left: 9,
+      right: 9
+    },
+    affix: {
+      topBottom: 9,
+      left: 18,
+      right: 18
     }
   },
-  secondary: {
-    large: {
-      normal: css`
-        padding: 14px 18px;
-      `,
-      prefix: css`
-        padding: 8px 18px;
-      `,
-      suffix: css`
-        padding: 12px 9px;
-      `,
-      affix: css`
-        padding: 8px 18px;
-      `
+  medium: {
+    normal: {
+      topBottom: 10,
+      left: 15,
+      right: 15
     },
-    medium: {
-      normal: css`
-        padding: 9px 15px;
-      `,
-      prefix: css`
-        padding: 6px 15px;
-      `,
-      suffix: css`
-        padding: 7px 4.72px 7px 15px;
-      `,
-      affix: css`
-        padding: 6px 15px;
-      `
+    prefix: {
+      topBottom: 7,
+      left: 15,
+      right: 15
     },
-    small: {
-      normal: css`
-        padding: 5px 12px;
-      `,
-      prefix: css`
-        padding: 2px 18.35px 2px 10px;
-      `,
-      suffix: css`
-        padding: 2px 3px 2px 34px;
-      `,
-      affix: css`
-        padding: 2px 3px 2px 10px;
-      `
+    suffix: {
+      topBottom: 8,
+      left: 15,
+      right: 5
+    },
+    affix: {
+      topBottom: 7,
+      left: 15,
+      right: 15
     }
   },
-  plain: {
-    large: {
-      normal: css`
-        padding: 15px 18px;
-      `,
-      prefix: css`
-        padding: 9px 18px;
-      `,
-      suffix: css`
-        padding: 13px 9px;
-      `,
-      affix: css`
-        padding: 9px 18px;
-      `
+  small: {
+    normal: {
+      topBottom: 6,
+      left: 12,
+      right: 12
     },
-    medium: {
-      normal: css`
-        padding: 10px 15px;
-      `,
-      prefix: css`
-        padding: 7px 15px;
-      `,
-      suffix: css`
-        padding: 8px 4.72px 8px 15px;
-      `,
-      affix: css`
-        padding: 7px 15px;
-      `
+    prefix: {
+      topBottom: 3,
+      left: 10,
+      right: 18.35
     },
-    small: {
-      normal: css`
-        padding: 6px 12px;
-      `,
-      prefix: css`
-        padding: 3px 18.35px 3px 10px;
-      `,
-      suffix: css`
-        padding: 3px 3px 3px 34px;
-      `,
-      affix: css`
-        padding: 3px 3px 3px 10px;
-      `
+    suffix: {
+      topBottom: 3,
+      left: 34,
+      right: 3
+    },
+    affix: {
+      topBottom: 3,
+      left: 10,
+      right: 3
     }
   }
 };
@@ -228,6 +162,7 @@ export const S = {
         opacity: 0.7;
       `}
   `,
+
   LoadingWrapper: styled(motion.div)<{ variant: ButtonVariant; size: ButtonSize }>`
     display: flex;
     justify-content: center;
