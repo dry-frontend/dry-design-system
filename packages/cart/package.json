@@ -1,6 +1,6 @@
 {
   "name": "cart",
-  "private": true,
+  "private": false,
   "version": "0.1.0",
   "type": "module",
   "scripts": {
@@ -49,5 +49,12 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "framer-motion": "^10.12.2"
-  }
+  },
+  "repository": {			// 한 줄로 작성하지말고, 다음과 같이 세부적으로 작성해준다.
+    "type": "git",
+    "url": "https://github.com/dry-frontend/dry-design-system"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
 }
