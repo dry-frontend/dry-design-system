@@ -14,15 +14,29 @@ export default defineConfig(() => ({
       include: ['src']
     })
   ],
+  resolve: {
+    alias: {
+      '@assets': path.resolve(__dirname, 'src/assets'),
+      '@components': path.resolve(__dirname, 'src/components')
+    }
+  },
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/main.tsx'),
+      entry: path.resolve(__dirname, 'src/index.tsx'),
       name: 'cart',
       formats: ['es'],
-      fileName: 'cart.es'
+      fileName: format => `cart.${format}.js`
     },
     esbuild: {
-      minify: true
+      minify: false
+    },
+    rollupOptions: {
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM'
+        }
+      }
     }
   }
 }));

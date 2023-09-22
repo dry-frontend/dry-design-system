@@ -1,8 +1,20 @@
 {
   "extends": "@dry/configs-ts-react",
   "compilerOptions": {
-    "baseUrl": "src",
-    "rootDir": "src"
+    "baseUrl": "./src",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@assets/*": ["assets/*"]
+    }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "src/**/*.test.tsx",
+    "src/**/*.stories.tsx",
+    "**/*.stories.tsx"
+  ]
 }
