@@ -1,4 +1,4 @@
-import { S } from 'components/Icon/styles';
+import { S } from '@components/Icon/styles';
 
 interface IconProps {
   src: string;

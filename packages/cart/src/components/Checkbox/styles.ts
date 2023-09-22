@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import checkImage from 'assets/check.svg';
+import checkImage from '@assets/check.svg';
 
 export const Input = styled.input`
   display: none;

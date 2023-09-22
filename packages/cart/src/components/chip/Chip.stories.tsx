@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Chip from 'components/Chip/Chip';
-import fillCartIcon from 'assets/fillCart.svg';
+import Chip from '@components/Chip/Chip';
+import fillCartIcon from '@assets/fillCart.svg';
 
 const meta: Meta<typeof Chip> = {
   title: 'Chip',

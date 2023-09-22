@@ -1,5 +1,5 @@
-import Icon from 'components/Icon/Icon';
-import { S } from 'components/IconButton/styles';
+import Icon from '@components/Icon/Icon';
+import { S } from '@components/IconButton/styles';
 
 interface IconButtonProps {
   iconUrl: string;

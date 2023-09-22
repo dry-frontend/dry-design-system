@@ -1,9 +1,7 @@
-import 'styles/globals.css';
-
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import FlexBox from 'components/FlexBox/FlexBox';
+import FlexBox from '@components/FlexBox/FlexBox';
 import React, { forwardRef, useRef, useState } from 'react';
 
 import * as S from './styles';
