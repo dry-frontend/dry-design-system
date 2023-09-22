@@ -2,7 +2,7 @@ import { PropsWithChildren, Ref, forwardRef } from 'react';
 import { InputAttributesType } from '../inputType';
 
 import * as S from './PasswordInput.styled';
-import { theme } from 'styles/theme';
+import { theme } from '../../../styles/theme';
 
 const Input = forwardRef(({ ...rest }: InputAttributesType, forwardRef: Ref<HTMLInputElement>) => {
   return (

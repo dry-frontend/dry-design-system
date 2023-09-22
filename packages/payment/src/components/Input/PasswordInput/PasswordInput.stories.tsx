@@ -1,6 +1,6 @@
 import { StoryFn, Meta } from '@storybook/react';
 import PasswordInput from './PasswordInput';
-import { theme } from 'styles/theme';
+import { theme } from '../../../styles/theme';
 
 export default {
   title: 'payments/Input/Password',

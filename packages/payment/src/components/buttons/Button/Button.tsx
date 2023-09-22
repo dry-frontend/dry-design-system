@@ -1,4 +1,4 @@
-import { Colors, theme } from 'styles/theme';
+import { Colors, theme } from '../../../styles/theme';
 import { Wrapper, Text } from './Button.styled';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

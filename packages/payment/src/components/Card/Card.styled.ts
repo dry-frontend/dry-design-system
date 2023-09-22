@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { CardSize } from './Card';
+import { theme } from '../../styles/theme';
 
 interface WrapperProps extends SizeProps {
   size: CardSize;
@@ -52,7 +53,7 @@ export const Wrapper = styled.div<WrapperProps>`
   border-radius: 5px;
   cursor: pointer;
 
-  ${({ size, color, theme }) => `
+  ${({ size, color }) => `
     width: ${cardSizeConfig[size].width}px;
     height: ${cardSizeConfig[size].height}px;
     padding: ${cardSizeConfig[size].padding}px;

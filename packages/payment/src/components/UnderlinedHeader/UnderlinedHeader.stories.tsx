@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import UnderlinedHeader from './UnderlinedHeader';
-import { theme } from 'styles/theme';
+import { theme } from '../../styles/theme';
 
 const meta: Meta<typeof UnderlinedHeader> = {
   title: 'UnderlinedHeader',

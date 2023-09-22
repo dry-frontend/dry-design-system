@@ -21,5 +21,5 @@ export const Default: Story = {
 };
 
 Default.args = {
-  backColor: 'green'
+  // backColor: 'green'
 };

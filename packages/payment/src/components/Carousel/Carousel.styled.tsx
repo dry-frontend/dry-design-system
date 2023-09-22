@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { theme } from 'styles/theme';
-import arrowSrc from 'assets/arrow.svg';
+import { theme } from '../../styles/theme';
+import arrowSrc from '@assets/arrow.svg';
 
 interface ContentListProps {
   index: number;

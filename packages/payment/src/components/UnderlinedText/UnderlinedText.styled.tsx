@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { UnderlinedTextProps } from './UnderlinedText';
-import { theme } from 'styles/theme';
+import { theme } from '../../styles/theme';
 
 export const Container = styled.div`
   position: relative;

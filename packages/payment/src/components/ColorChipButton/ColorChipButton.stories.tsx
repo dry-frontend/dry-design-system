@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { theme } from 'styles/theme';
+import { theme } from '../styles/theme';
 import ColorChipButton from './ColorChipButton';
 
 const meta: Meta<typeof ColorChipButton> = {

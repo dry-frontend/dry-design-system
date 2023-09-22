@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { UnderlinedHeaderProps } from './UnderlinedHeader';
-import { theme } from 'styles/theme';
+import { theme } from '../../styles/theme';
 
 export const Header = styled.h3<UnderlinedHeaderProps>`
   width: ${({ width }) => width || 'auto'};

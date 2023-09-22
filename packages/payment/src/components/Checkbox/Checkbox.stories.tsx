@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Checkbox from './Checkbox';
-import { theme } from 'styles/theme';
+import { theme } from '../styles/theme';
 
 const meta: Meta<typeof Checkbox> = {
   title: 'Checkbox',
