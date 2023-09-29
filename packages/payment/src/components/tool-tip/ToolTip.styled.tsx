@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { theme } from '../../styles/theme';
 
 export const Container = styled.div`
   display: flex;
@@ -23,7 +24,7 @@ export const DescriptionWrapper = styled.div<{
   gap: string;
 }>`
   position: absolute;
-  z-index: ${({ theme }) => theme.zIndex.TOOLTIP_BOX};
+  z-index: ${theme.zIndex.TOOLTIP_BOX};
 
   opacity: 0;
   visibility: hidden;

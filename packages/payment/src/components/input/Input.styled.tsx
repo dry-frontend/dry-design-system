@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { theme } from '../../styles/theme';
 
 export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-color: ${({ theme }) => theme.colors.GRAY_300};
+  background-color: ${theme.colors.GRAY_300};
   border-radius: 7px;
 
   height: 45px;
@@ -23,5 +24,5 @@ export const Input = styled.input`
   background-color: transparent;
 
   font-size: 18px;
-  color: ${({ theme }) => theme.colors.PRIMARY};
+  color: ${theme.colors.PRIMARY};
 `;

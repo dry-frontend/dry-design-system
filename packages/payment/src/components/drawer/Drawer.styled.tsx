@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { theme } from '../../styles/theme';
 
 export const Dimmed = styled.div`
   position: absolute;
@@ -12,7 +13,7 @@ export const Dimmed = styled.div`
 
   background-color: rgba(0, 0, 0, 0.5);
 
-  z-index: ${({ theme }) => theme.zIndex.DRAWER};
+  z-index: ${theme.zIndex.DRAWER};
 
   &.is-open {
     opacity: 1;
@@ -23,7 +24,7 @@ export const Dimmed = styled.div`
 export const Container = styled.div<{ anchor: 'left' | 'right' | 'top' | 'bottom' }>`
   position: absolute;
 
-  background-color: ${({ theme }) => theme.colors.WHITE};
+  background-color: ${theme.colors.WHITE};
   box-sizing: border-box;
 
   ${({ anchor }) =>

@@ -62,7 +62,7 @@ export const Wrapper = styled.div<WrapperProps>`
 `;
 
 export const IcChip = styled.div<SizeProps>`
-  background-color: ${({ theme }) => theme.colors.YELLOW_800};
+  background-color: ${theme.colors.YELLOW_800};
   border-radius: 4px;
 
   ${({ size }) => `

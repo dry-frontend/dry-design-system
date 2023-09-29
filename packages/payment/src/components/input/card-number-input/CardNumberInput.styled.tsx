@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Container, Input } from '../Input.styled';
+import { theme } from '../../../styles/theme';
 
 export const CardNumberContainer = styled(Container)`
   width: 100%;
@@ -19,6 +20,6 @@ export const CardNumberInput = styled(Input)`
 
 export const Dash = styled.p`
   font-size: 18px;
-  color: ${({ theme }) => theme.colors.BLACK_300};
+  color: ${theme.colors.BLACK_300};
   margin: 0 4px;
 `;
