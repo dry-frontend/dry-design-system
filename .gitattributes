@@ -1,3 +1,0 @@
-# .gitattributes
-
-**/pnpm-lock.yaml -diff
