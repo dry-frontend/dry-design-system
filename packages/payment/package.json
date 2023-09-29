@@ -24,7 +24,8 @@
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "@types/styled-components": "5.1.28"
   },
   "devDependencies": {
     "@dry/configs-eslint-ts-react": "workspace:^",
