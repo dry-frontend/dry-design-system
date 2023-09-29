@@ -1,4 +1,4 @@
-import { ButtonPadding, ButtonSizes, ButtonStyles } from './styles';
+import { ButtonPadding, ButtonStyles } from './styles';
 
 export declare type ButtonVariant = keyof typeof ButtonStyles.Type;
 export declare type ButtonSize = keyof typeof ButtonPadding;
