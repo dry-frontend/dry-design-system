@@ -1,0 +1,23 @@
+{
+  "name": "@dry/configs-ts",
+  "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "configs",
+    "pnpm",
+    "typescript"
+  ],
+  "scripts": {
+    "clean": "rimraf ./node_modules"
+  },
+  "description": "Shared typescript config for monorepo (ts) and lib (ts) packages",
+  "author": "dev-robot",
+  "license": "MIT",
+  "main": "tsconfig.json",
+  "peerDependencies": {
+    "@types/node": "^18.11.3",
+    "typescript": "^4.9.4"
+  }
+}
