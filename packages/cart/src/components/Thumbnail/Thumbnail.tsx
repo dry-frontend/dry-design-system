@@ -1,5 +1,5 @@
-import { S } from '@components/Thumbnail/styles';
-import { ThumbnailSize } from '@components/Thumbnail/types';
+import { S } from '@components/thumbnail/styles';
+import { ThumbnailSize } from '@components/thumbnail/types';
 
 interface ThumbnailProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   size?: ThumbnailSize;

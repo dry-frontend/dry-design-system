@@ -1,9 +1,9 @@
-import { getButtonPadding } from '@components/Button/getButtonSize';
-import { S } from '@components/Button/styles';
-import { ButtonSize, ButtonType, ButtonVariant } from '@components/Button/types';
-import Icon from '@components/Icon/Icon';
-import LoadingSpinner from '@components/LoadingSpinner/LoadingSpinner';
-import Chip from '@components/Chip/Chip';
+import { getButtonPadding } from '@components/button/getButtonSize';
+import { S } from '@components/button/styles';
+import { ButtonSize, ButtonType, ButtonVariant } from '@components/button/types';
+import Icon from '@components/icon/Icon';
+import LoadingSpinner from '@components/loading-spinner/LoadingSpinner';
+import Chip from '@components/chip/Chip';
 import { motion } from 'framer-motion';
 import React from 'react';
 

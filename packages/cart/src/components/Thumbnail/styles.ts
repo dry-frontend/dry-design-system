@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { ThumbnailSize } from '@components/Thumbnail/types';
+import { ThumbnailSize } from '@components/thumbnail/types';
 
 export const ThumbnailStyles = {
   Size: {

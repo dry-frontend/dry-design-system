@@ -1,20 +1,20 @@
-import { Button } from './components/buttons/Button/Button';
-import { IconButton } from './components/buttons/IconButton/IconButton';
-import { Card } from './components/Card/Card';
-import Carousel from './components/Carousel/Carousel';
-import CheckBox from './components/Checkbox/Checkbox';
-import ColorChipButton from './components/ColorChipButton/ColorChipButton';
-import Drawer from './components/Drawer/Drawer';
-import FlexBox from './components/FlexBox/FlexBox';
-import Header from './components/Header/Header';
-import CardNumberInput from './components/Input/CardNumberInput/CardNumberInput';
-import CvcInput from './components/Input/CvcInput/CvcInput';
-import ExpirationDateInput from './components/Input/ExpirationDateInput/ExpirationDateInput';
-import NameInput from './components/Input/NameInput/NameInput';
-import PasswordInput from './components/Input/PasswordInput/PasswordInput';
-import ToolTip from './components/ToolTip/ToolTip';
-import UnderlinedHeader from './components/UnderlinedHeader/UnderlinedHeader';
-import UnderlinedText from './components/UnderlinedText/UnderlinedText';
+import { Button } from './components/buttons/button/Button';
+import { IconButton } from './components/buttons/icon-button/IconButton';
+import { Card } from './components/card/Card';
+import Carousel from './components/carousel/Carousel';
+import CheckBox from './components/checkbox/Checkbox';
+import ColorChipButton from './components/color-chip-button/ColorChipButton';
+import Drawer from './components/drawer/Drawer';
+import FlexBox from './components/flexbox/FlexBox';
+import Header from './components/header/Header';
+import CardNumberInput from './components/input/card-number-input/CardNumberInput';
+import CvcInput from './components/input/cvc-input/CvcInput';
+import ExpirationDateInput from './components/input/expiration-date-input/ExpirationDateInput';
+import NameInput from './components/input/name-input/NameInput';
+import PasswordInput from './components/input/password-input/PasswordInput';
+import ToolTip from './components/tool-tip/ToolTip';
+import UnderlinedHeader from './components/underlined-header/UnderlinedHeader';
+import UnderlinedText from './components/underlined-text/UnderlinedText';
 
 export {
   Button,

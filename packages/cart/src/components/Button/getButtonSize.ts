@@ -1,5 +1,5 @@
-import { ButtonPadding } from '@components/Button/styles';
-import { ButtonAffix, ButtonSize, ButtonVariant } from '@components/Button/types';
+import { ButtonPadding } from '@components/button/styles';
+import { ButtonAffix, ButtonSize, ButtonVariant } from '@components/button/types';
 import { FlattenSimpleInterpolation, css } from 'styled-components';
 
 interface getButtonPaddingParams {

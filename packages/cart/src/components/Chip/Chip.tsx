@@ -1,5 +1,5 @@
-import { ButtonVariant } from '@components/Button/types';
-import { S } from '@components/Chip/styles';
+import { ButtonVariant } from '@components/button/types';
+import { S } from '@components/chip/styles';
 import { motion } from 'framer-motion';
 
 interface ChipProps extends React.ComponentPropsWithRef<typeof motion.div> {

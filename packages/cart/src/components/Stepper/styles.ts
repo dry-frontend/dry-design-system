@@ -1,4 +1,4 @@
-import PlainButton from '@components/Button/PlainButton';
+import PlainButton from '@components/button/PlainButton';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 

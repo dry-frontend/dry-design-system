@@ -1,4 +1,4 @@
-import { ButtonVariant } from '@components/Button/types';
+import { ButtonVariant } from '@components/button/types';
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 

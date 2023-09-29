@@ -1,4 +1,4 @@
-import { ButtonSize, ButtonVariant } from '@components/Button/types';
+import { ButtonSize, ButtonVariant } from '@components/button/types';
 import { motion } from 'framer-motion';
 import styled, { FlattenSimpleInterpolation, css } from 'styled-components';
 

@@ -1,4 +1,4 @@
-import Button from '@components/Button/Button';
+import Button from '@components/button/Button';
 import styled from 'styled-components';
 
 export const S = {

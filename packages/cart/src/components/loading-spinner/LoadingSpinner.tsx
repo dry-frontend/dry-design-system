@@ -1,4 +1,4 @@
-import { S } from '@components/LoadingSpinner/styles';
+import { S } from '@components/loading-spinner/styles';
 
 function LoadingSpinner() {
   return <S.Spinner />;
